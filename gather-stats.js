@@ -1,20 +1,27 @@
-import fs from 'fs';
-import path from 'path';
+import glob from 'glob';
+import lineByLine from 'n-readlines';
 
 import { initDatabase, updateStat } from './db.js';
 
 const ingredientsDir = '../wtr-ingredients';
 const ingredientsComponentsDir = 'src/ingredients';
-const waitroseDotComDir = '../wtr-website';
+// const waitroseDotComDir = '../wtr-website';
+
+let numStoriesExports = 0;
 
 initDatabase();
 
-fs.readdir(path.join(ingredientsDir, ingredientsComponentsDir), (err, files) => {
-  const numIngredientsComponents = files.filter((filename) => filename === 'index.js').length;
-  // const numIngredientsStories = files.filter((filename) => filename.endsWith('stories.js'))
-  // Just for now:
-  const numIngredientsStories = numIngredientsComponents;
+glob(`${ingredientsDir}/${ingredientsComponentsDir}/**/*.stories.js`, (err, files) => {
+  files.forEach((file) => {
+    const liner = new lineByLine(file);
+    let line;
+    while ((line = liner.next())) {
+      if (line.toString().match('export const')) {
+        numStoriesExports++;
+      }
+    }
+  });
 
-  updateStat('numIngredientsComponents', numIngredientsComponents);
-  updateStat('numIngredientsStories', numIngredientsStories);
+  updateStat('numIngredientsComponents', files.length);
+  updateStat('numIngredientsStories', numStoriesExports);
 });

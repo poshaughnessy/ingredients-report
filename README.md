@@ -1,6 +1,6 @@
-# Design System Report
+# Ingredients Design System Report Dashboard
 
-This mini project is for a report dashboard showing how we're doing with getting our components migrated over to the Ingredients design system.
+This is a reporting dashboard showing how we're doing with getting our components migrated over to the Ingredients design system.
 
 1. Use Node v14+ (e.g. via nvm) or a recent version which supports ESM modules.
 
