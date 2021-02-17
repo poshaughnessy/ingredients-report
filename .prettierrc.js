@@ -1,0 +1,20 @@
+module.exports = {
+  singleQuote: true,
+  trailingComma: 'all',
+  semi: true,
+  overrides: [
+    {
+      files: '*.js',
+      options: {
+        parser: 'flow',
+      },
+    },
+    {
+      files: '**/formbuilder/index.js',
+      options: {
+        trailingComma: 'es5',
+      },
+    },
+  ],
+  printWidth: 100,
+};

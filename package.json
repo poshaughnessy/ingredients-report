@@ -1,0 +1,21 @@
+{
+  "name": "wtr-ingredients-report",
+  "version": "0.0.1",
+  "description": "Ingredients design system report",
+  "scripts": {
+    "gather": "node gather-stats",
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Waitrose - Project IP",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.0",
+    "node-fetch": "^2.6.1",
+    "sqlite3": "^5.0.2"
+  }
+}

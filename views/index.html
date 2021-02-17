@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#222222">
+    <title>Ingredients Report</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="vendor/chartist.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <script defer src="vendor/moment.js"></script>
+    <script defer src="vendor/chartist.js"></script>
+    <script defer src="client-util.js"></script>
+    <script defer src="client-index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Ingredients Report</h1>			
+		</header>		
+		<main>
+      <div id="general-stats" v-cloak>        
+        <h2>Overview <span class="last-updated">Last updated: <span class="last-updated-time">{{lastUpdatedTime}}</span></h2>
+        <div class="numbers">          
+          <div>
+            <h3>{{stats.numIngredientsComponents.mostRecent.formatted}}</h3>
+						<p>Ingredients Components</p>
+            <stat-comparison v-bind:comparison="stats.numIngredientsComponents.comparison"></stat-comparison>
+          </div>
+          <div>
+            <h3>{{stats.numIngredientsStories.mostRecent.formatted}}</h3>
+            <p>Ingredients Stories</p>
+            <stat-comparison v-bind:comparison="stats.numIngredientsStories.comparison"></stat-comparison>
+          </div>
+				</div>
+			</div>
+	</body>
+</html>
