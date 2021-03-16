@@ -7,7 +7,7 @@ module.exports = {
     mocha: true,
     jest: true,
   },
-  plugins: ['react', 'import', 'mocha', 'json', 'prettier', 'react-hooks'],
+  plugins: ['react', 'import', 'json', 'prettier', 'react-hooks'],
   rules: {
     'react/forbid-prop-types': ['warn'],
     'jsx-a11y/role-supports-aria-props': ['warn'],

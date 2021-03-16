@@ -16,24 +16,105 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	</head>
 	<body>
-		<header>
-			<h1>Ingredients Report</h1>			
-		</header>		
-		<main>
-      <div id="general-stats" v-cloak>        
-        <h2>Overview <span class="last-updated">Last updated: <span class="last-updated-time">{{lastUpdatedTime}}</span></h2>
+		<main id="general-stats" v-cloak>
+      <h1>Ingredients Report <span class="last-updated">Last updated: <span class="last-updated-time">{{lastUpdatedTime}}</span></h1>
+      <div>     
+
+        <h2>Overview</h2>
         <div class="numbers">          
           <div>
             <h3>{{stats.numIngredientsComponents.mostRecent.formatted}}</h3>
-						<p>Ingredients Components</p>
+						<p>Ingredients components</p>
             <stat-comparison v-bind:comparison="stats.numIngredientsComponents.comparison"></stat-comparison>
           </div>
           <div>
             <h3>{{stats.numIngredientsStories.mostRecent.formatted}}</h3>
-            <p>Ingredients Stories</p>
+            <p>Ingredients Storybook stories</p>
             <stat-comparison v-bind:comparison="stats.numIngredientsStories.comparison"></stat-comparison>
           </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Components using deprecated components</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedComponentInstances.mostRecent.formatted}}</h3>
+            <p>Instances of deprecated components</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedComponentInstances.comparison"></stat-comparison>
+          </div>          
 				</div>
+
+        <h2>Buttons</h2>
+        <div class="numbers">           
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Components using deprecated buttons</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedButtonInstances.mostRecent.formatted}}</h3>
+            <p>Instances of deprecated buttons</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedButtonInstances.comparison"></stat-comparison>
+          </div>
+        </div>
+
+        <h2>Teams</h2>
+        <h3>Components using deprecated components</h3>
+        <div class="numbers"> 
+          <div class="down-is-good">
+            <h3>{{stats.accountNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Account</p>
+            <stat-comparison v-bind:comparison="stats.accountNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.browseNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Browse</p>
+            <stat-comparison v-bind:comparison="stats.browseNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.buyCheckoutNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Buy Checkout</p>
+            <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.contentNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Content</p>
+            <stat-comparison v-bind:comparison="stats.contentNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.crossCuttingNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Not yet categorised</p>
+            <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+        </div>
+        <h3>Components using deprecated buttons</h3>
+        <div class="numbers"> 
+          <div class="down-is-good">
+            <h3>{{stats.accountNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Account</p>
+            <stat-comparison v-bind:comparison="stats.accountNumDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.browseNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Browse</p>
+            <stat-comparison v-bind:comparison="stats.browseNumDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.buyCheckoutNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Buy Checkout</p>
+            <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.contentNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Content</p>
+            <stat-comparison v-bind:comparison="stats.contentNumDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.crossCuttingNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <p>Cross-cutting</p>
+            <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedButtonFiles.comparison"></stat-comparison>
+          </div>
+        </div>
 			</div>
 	</body>
 </html>
