@@ -115,23 +115,54 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
    */
   const teamPathMatches = {
     'account': [
+      'components/Address',
+      'components/MarketingPreferences',
+      'components/MyAccount',
       'components/MyDetails',
+      'components/SeachNavigateBack', // used for AddressSearch (note misspelling)
+      'ingredients/AddressTile',
     ],
     'browse': [
+      'components/AddAllItemsErrorModal',
+      'components/AppBanner',
+      'components/BackToTop',
+      'components/Breadcrumbs',
       'components/CategoryLinks',
       'components/ClickToBuy',
       'components/Footer',
+      'components/HomeLink',
+      'components/HomePage',
+      'components/Images/Thumbnail',
+      'components/Lists',
       'components/LoadMoreButton',
+      'components/MegaMenu',
+      'components/MissedOffers',
+      'components/MultiSearch',
       'components/PageTitle',
       'components/ProceedThroughCheckout',
+      'components/Product/',
       'components/ProductDetails',
       'components/Search',
+      'components/ShoppingList',
       'components/SiteHeader',
+      'components/SiteSideBar',
+      'components/TrolleyActions',
     ],
     'buyCheckout': [
+      'components/AddGiftCard',
+      'components/AddGiftVoucher',
+      'components/AddToCalendar',
       'components/Checkout', 
+      'components/Forms/ReduxFormFields/CardSecurityNumber',
+      'components/Forms/ReduxFormFields/ExpiryDate',
+      'components/GiftCard',
+      'components/GiftItem',
+      'components/GiftVoucher',
       'components/GiftVouchersAndCards',
-      'components/OrderConfirmation', 
+      'components/OrderConfirmation',
+      'components/MyPaymentCards',
+      'components/OrderDetails',
+      'components/OrderTotals',
       'components/PartnerDiscount', 
       'components/PaymentCard',
       'components/PaymentSavedCard',
@@ -139,38 +170,83 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
       'components/PreviousOrderSummary',
       'components/ViewOrder'
     ],
+    'buyTrolley': [
+      'components/Trolley/',
+    ],
     'content': [
       'components/Accordion',
+      'components/CmsPage',
       'components/FullWidthNavigation',
+      'components/ProductPicker',
+      'components/RichText',
       'components/TradingCell',
       'components/TradingComponent',
       'components/WhyWaitrose',
     ],
+    'customerServiceAndComms': [
+      'components/ContactUsCard',
+      'components/CustomerServiceForms',
+      'components/Forms/utilities/ImageUpload',
+      'components/Forms/utilities/SearchSelect',
+    ],
+    'identity': [
+      'components/Authentication',
+      'components/Forms/validators/getPasswordValidator',
+      'components/Login',
+      'components/Logout',
+      'components/Registration',
+      'components/ResetPassword',
+      'components/ReturnToAdmin',
+      'ingredients/forms/PasswordInput',
+    ],
+    'loyalty': [
+      'components/CookieAlert',
+      'components/DigitalWallet',
+      'components/LeaveMyWaitrose',
+      'components/MarketingPreferences',
+      'components/MyWaitrose',
+      'components/OrderReplacementCard',
+      'components/PromoCode',
+      'components/PromoItem',
+    ],
+    'slots' : [
+      'components/BookSlot',
+    ]
   };
 
   let totalDeprecatedComponentsByTeam = 0;
   let totalDeprecatedButtonsByTeam = 0;
   let deprecatedComponentsByTeam = {};
   let deprecatedButtonsByTeam = {};
+  let filesIncludingDeprecatedComponentsMissingTeam = [];
+  let filesIncludingDeprecatedButtonsMissingTeam = []
 
   ///// Components...
   filesIncludingDeprecatedComponentsFiltered.forEach(file => {
-    Object.keys(teamPathMatches).forEach(teamName => {
-      teamPathMatches[teamName].forEach(path => {
+    let foundTeam = false;
+    for (const teamName of Object.keys(teamPathMatches)) {
+      for (const path of teamPathMatches[teamName]) {
         if (file.includes(path)) {
           if (!deprecatedComponentsByTeam[teamName]) {
             deprecatedComponentsByTeam[teamName] = [];
           }
           deprecatedComponentsByTeam[teamName].push(file);
           totalDeprecatedComponentsByTeam++;
+          foundTeam = true;
+          break;
         }
-      });
-    });
+      }
+      if (foundTeam) break;
+    }
+    if (!foundTeam) {
+      filesIncludingDeprecatedComponentsMissingTeam.push(file);
+    }
   });
 
+  console.log('\n-- COMPONENTS --');
+
   Object.keys(deprecatedComponentsByTeam).forEach(teamName => {
-    console.log('--');
-    console.log(`${teamName} team components using deprecated components:\n`);
+    console.log(`\n${teamName} team components using deprecated components:\n`);
     deprecatedComponentsByTeam[teamName].forEach(file => console.log(file));
   
     updateStat(`${teamName}NumDeprecatedComponentFiles`, deprecatedComponentsByTeam[teamName].length);
@@ -179,30 +255,43 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   ///// Buttons...
   filesIncludingDeprecatedButtonsFiltered.forEach(file => {
-    Object.keys(teamPathMatches).forEach(teamName => {
-      teamPathMatches[teamName].forEach(path => {
+    let foundTeam = false;
+    for (const teamName of Object.keys(teamPathMatches)) {
+      for (const path of teamPathMatches[teamName]) {
         if (file.includes(path)) {
           if (!deprecatedButtonsByTeam[teamName]) {
             deprecatedButtonsByTeam[teamName] = [];
           }
           deprecatedButtonsByTeam[teamName].push(file);
           totalDeprecatedButtonsByTeam++;
+          foundTeam = true;
+          break;
         }
-      });
-    });
+      }
+      if (foundTeam) break;
+    }
+    if (!foundTeam) {
+      filesIncludingDeprecatedButtonsMissingTeam.push(file);
+    }
   });
 
-  Object.keys(deprecatedButtonsByTeam).forEach(teamName => {
-    console.log('--');
-    console.log(`${teamName} team components using deprecated buttons:\n`);
+  console.log('\n-- BUTTONS --');
+  Object.keys(deprecatedButtonsByTeam).forEach(teamName => {    
+    console.log(`\n${teamName} team components using deprecated buttons:\n`);
     deprecatedButtonsByTeam[teamName].forEach(file => console.log(file));
 
     updateStat(`${teamName}NumDeprecatedButtonFiles`, deprecatedButtonsByTeam[teamName].length);
   });
 
+  console.log('\n-- COMPONENTS WITH DEPRECATED COMPONENTS MISSING TEAMS --');
+  filesIncludingDeprecatedComponentsMissingTeam.forEach(file => console.log(file));
+
+  console.log('\n-- COMPONENTS WITH DEPRECATED BUTTONS MISSING TEAMS --');
+  filesIncludingDeprecatedButtonsMissingTeam.forEach(file => console.log(file));
+
   console.log('--');
-  console.log('COMPONENTS CURRENTLY MISSING TEAM ASSIGNMENT', filesIncludingDeprecatedComponentsFiltered.length - totalDeprecatedComponentsByTeam);
-  console.log('Cross-cutting components using deprecated buttons', filesIncludingDeprecatedButtonsFiltered.length - totalDeprecatedButtonsByTeam);
+  console.log('Number of components with deprecated components missing teams', filesIncludingDeprecatedComponentsMissingTeam.length);
+  console.log('Number of components with deprecated buttons missing teams', filesIncludingDeprecatedButtonsMissingTeam.length);
 
   updateStat('crossCuttingNumDeprecatedComponentFiles', filesIncludingDeprecatedComponentsFiltered.length - totalDeprecatedComponentsByTeam);
   updateStat('crossCuttingNumDeprecatedButtonFiles', filesIncludingDeprecatedButtonsFiltered.length - totalDeprecatedButtonsByTeam);
