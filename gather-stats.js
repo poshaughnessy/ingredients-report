@@ -9,9 +9,10 @@ const deprecatedButtonPaths = ['components/Button', 'components/wdx/buttons'];
 let deprecatedComponentPaths = [];
 let filesIncludingDeprecatedButtons = [];
 let filesIncludingDeprecatedComponents = [];
-let numStoriesExports = 0;
 let numDeprecatedComponentInstances = 0;
 let numDeprecatedButtonInstances = 0;
+let numIngredientsComponents = 0;
+let numStoriesExports = 0;
 
 initDatabase();
 
@@ -27,7 +28,8 @@ glob(`../wtr-ingredients/src/ingredients/**/*.stories.js`, (err, files) => {
     }
   });
 
-  updateStat('numIngredientsComponents', files.length);
+  numIngredientsComponents = files.length;
+  updateStat('numIngredientsComponents', numIngredientsComponents);
   updateStat('numIngredientsStories', numStoriesExports);
 });
 
@@ -295,5 +297,9 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   updateStat('crossCuttingNumDeprecatedComponentFiles', filesIncludingDeprecatedComponentsFiltered.length - totalDeprecatedComponentsByTeam);
   updateStat('crossCuttingNumDeprecatedButtonFiles', filesIncludingDeprecatedButtonsFiltered.length - totalDeprecatedButtonsByTeam);
+
+  console.log('Tech debt per design system component', numDeprecatedComponentInstances / numIngredientsComponents);
+
+  updateStat('techDebtPerDesignSystemComponent', numDeprecatedComponentInstances / numIngredientsComponents);
 
 });

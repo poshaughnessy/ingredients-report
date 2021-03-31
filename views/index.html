@@ -41,7 +41,12 @@
             <h3>{{stats.numDeprecatedComponentInstances.mostRecent.formatted}}</h3>
             <p>Instances of deprecated components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedComponentInstances.comparison"></stat-comparison>
-          </div>          
+          </div>    
+          <div class="down-is-good">
+            <h3>{{stats.techDebtPerDesignSystemComponent.mostRecent.formatted}}</h3>
+            <p>Tech debt per Ingredients component</p>
+            <stat-comparison v-bind:comparison="stats.techDebtPerDesignSystemComponent.comparison"></stat-comparison>
+          </div>      
 				</div>
 
         <h2>Buttons</h2>

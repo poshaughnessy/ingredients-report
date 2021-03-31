@@ -1,10 +1,12 @@
 /**
- * If thousands or more, use format like 12.3
+ * If thousands or more, use format like 12.3K
+ * Otherwise if whole number, don't include decimal places
+ * Otherwise use 2 decimal points by default
  */
 function formatNumberValue(number, forceThousandsFormat) {
   return forceThousandsFormat || Math.abs(number) >= 1000
     ? (number / 1000).toFixed(1) + 'K'
-    : number;
+    : number === Math.floor(number) ? number : number.toFixed(2);
 }
 
 function getMostRecentStats() {
