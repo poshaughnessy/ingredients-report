@@ -1,10 +1,12 @@
 # Ingredients Design System Report Dashboard
 
-This is a reporting dashboard showing how we're doing with getting our components migrated over to the Ingredients design system.
+This is a reporting dashboard showing how we're doing with getting our components migrated over to the Ingredients design system. It's a work-in-progress and this isn't intended to be the ultimate system for it.
+
+Here's how to use this "MVP" version:
 
 1. Use Node v14+ (e.g. via nvm) or a recent version which supports ESM modules.
 
-2. Ensure this directory is checked out alongside both wtr-ingredients and wtr-website (so they should each come under the same parent directory). And ensure both those projects are updated to the latest code on the master branches.
+2. Ensure this directory is checked out alongside both `wtr-ingredients` and `wtr-website` (so they should each come under the same parent directory). And ensure both those projects are updated to the latest code on the master branches.
 
 3. Then to update the DB with the latest stats (at most once per day, but expected to be more like every week or two):
 
@@ -17,3 +19,5 @@ node gather-stats
 ```
 node server
 ```
+
+5. As a temporary solution, the dashboard is currently [hosted on Render](https://ingredients-report.onrender.com/). If you would like to deploy updates there in the short term, please ask Peter O'Shaughnessy for help.
