@@ -2,6 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import lineByLine from 'n-readlines';
 
+import componentPathsByTeam from './component-paths-by-team.js';
 import { initDatabase, updateStat } from './db.js';
 
 const deprecatedButtonPaths = ['components/Button', 'components/wdx/buttons'];
@@ -112,109 +113,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   updateStat('numDeprecatedButtonFiles', filesIncludingDeprecatedButtonsFiltered.length);
 
-  /**
-   * By team
-   */
-  const teamPathMatches = {
-    'account': [
-      'components/Address',
-      'components/MarketingPreferences',
-      'components/MyAccount',
-      'components/MyDetails',
-      'components/SeachNavigateBack', // used for AddressSearch (note misspelling)
-      'ingredients/AddressTile',
-    ],
-    'browse': [
-      'components/AddAllItemsErrorModal',
-      'components/AppBanner',
-      'components/BackToTop',
-      'components/Breadcrumbs',
-      'components/CategoryLinks',
-      'components/ClickToBuy',
-      'components/Footer',
-      'components/HomeLink',
-      'components/HomePage',
-      'components/Images/Thumbnail',
-      'components/Lists',
-      'components/LoadMoreButton',
-      'components/MegaMenu',
-      'components/MissedOffers',
-      'components/MultiSearch',
-      'components/PageTitle',
-      'components/ProceedThroughCheckout',
-      'components/Product/',
-      'components/ProductDetails',
-      'components/Search',
-      'components/ShoppingList',
-      'components/SiteHeader',
-      'components/SiteSideBar',
-      'components/TrolleyActions',
-    ],
-    'buyCheckout': [
-      'components/AddGiftCard',
-      'components/AddGiftVoucher',
-      'components/AddToCalendar',
-      'components/Checkout', 
-      'components/Forms/ReduxFormFields/CardSecurityNumber',
-      'components/Forms/ReduxFormFields/ExpiryDate',
-      'components/GiftCard',
-      'components/GiftItem',
-      'components/GiftVoucher',
-      'components/GiftVouchersAndCards',
-      'components/OrderConfirmation',
-      'components/MyPaymentCards',
-      'components/OrderDetails',
-      'components/OrderTotals',
-      'components/PartnerDiscount', 
-      'components/PaymentCard',
-      'components/PaymentSavedCard',
-      'components/PendingOrderSummary',
-      'components/PreviousOrderSummary',
-      'components/ViewOrder'
-    ],
-    'buyTrolley': [
-      'components/Trolley/',
-    ],
-    'content': [
-      'components/Accordion',
-      'components/CmsPage',
-      'components/FullWidthNavigation',
-      'components/ProductPicker',
-      'components/RichText',
-      'components/TradingCell',
-      'components/TradingComponent',
-      'components/WhyWaitrose',
-    ],
-    'customerServiceAndComms': [
-      'components/ContactUsCard',
-      'components/CustomerServiceForms',
-      'components/Forms/utilities/ImageUpload',
-      'components/Forms/utilities/SearchSelect',
-    ],
-    'identity': [
-      'components/Authentication',
-      'components/Forms/validators/getPasswordValidator',
-      'components/Login',
-      'components/Logout',
-      'components/Registration',
-      'components/ResetPassword',
-      'components/ReturnToAdmin',
-      'ingredients/forms/PasswordInput',
-    ],
-    'loyalty': [
-      'components/CookieAlert',
-      'components/DigitalWallet',
-      'components/LeaveMyWaitrose',
-      'components/MarketingPreferences',
-      'components/MyWaitrose',
-      'components/OrderReplacementCard',
-      'components/PromoCode',
-      'components/PromoItem',
-    ],
-    'slots' : [
-      'components/BookSlot',
-    ]
-  };
+
 
   let totalDeprecatedComponentsByTeam = 0;
   let totalDeprecatedButtonsByTeam = 0;
@@ -226,8 +125,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   ///// Components...
   filesIncludingDeprecatedComponentsFiltered.forEach(file => {
     let foundTeam = false;
-    for (const teamName of Object.keys(teamPathMatches)) {
-      for (const path of teamPathMatches[teamName]) {
+    for (const teamName of Object.keys(componentPathsByTeam)) {
+      for (const path of componentPathsByTeam[teamName]) {
         if (file.includes(path)) {
           if (!deprecatedComponentsByTeam[teamName]) {
             deprecatedComponentsByTeam[teamName] = [];
@@ -258,8 +157,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   ///// Buttons...
   filesIncludingDeprecatedButtonsFiltered.forEach(file => {
     let foundTeam = false;
-    for (const teamName of Object.keys(teamPathMatches)) {
-      for (const path of teamPathMatches[teamName]) {
+    for (const teamName of Object.keys(componentPathsByTeam)) {
+      for (const path of componentPathsByTeam[teamName]) {
         if (file.includes(path)) {
           if (!deprecatedButtonsByTeam[teamName]) {
             deprecatedButtonsByTeam[teamName] = [];
