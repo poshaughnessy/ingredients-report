@@ -5,7 +5,13 @@ import lineByLine from 'n-readlines';
 import componentPathsByTeam from './component-paths-by-team.js';
 import { initDatabase, updateStat } from './db.js';
 
-const deprecatedButtonPaths = ['components/Button', 'components/wdx/buttons'];
+// Exact matches rather than checking just included in path
+// Take care they match up with deprecated-components to avoid confusion
+const deprecatedButtonFullPaths = [
+  'components/Button', 
+  'components/Button/Spinner',
+  'components/Button/Submit'
+];
 
 let deprecatedComponentPaths = [];
 let filesIncludingDeprecatedButtons = [];
@@ -50,18 +56,16 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   files.forEach((file) => {
     const linerSrc = new lineByLine(file);
     let lineSrc;
-    let foundInFile = false;
     while ((lineSrc = linerSrc.next())) {
       if (deprecatedComponentPaths.some(path => lineSrc.toString().includes(path))) {
         console.log('Found deprecated component:', lineSrc.toString());
         filesIncludingDeprecatedComponents.push(file);
         numDeprecatedComponentInstances++;
-        foundInFile = true;
       }      
-      if (deprecatedButtonPaths.some(path => lineSrc.toString().includes(path))) {
+      if (deprecatedButtonFullPaths.some(path => lineSrc.toString().includes(`'${path}'`))) {
+        console.log('- And it\'s a button', lineSrc.toString());
         filesIncludingDeprecatedButtons.push(file);
         numDeprecatedButtonInstances++;
-        foundInFile = true;
       }
     }
   });
