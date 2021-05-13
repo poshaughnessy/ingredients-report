@@ -5,20 +5,50 @@ import lineByLine from 'n-readlines';
 import componentPathsByTeam from './component-paths-by-team.js';
 import { initDatabase, updateStat } from './db.js';
 
+const ADD_LIST = 'ADD_LIST';
+const ALERT = 'ALERT';
+const BUTTON = 'BUTTON';
+const CARD = 'CARD';
+const MODAL = 'MODAL';
+const TEXT_INPUT = 'TEXT_INPUT';
+
 // Exact matches rather than checking just included in path
-// Take care they match up with deprecated-components to avoid confusion
-const deprecatedButtonFullPaths = [
-  'components/Button', 
-  'components/Button/Spinner',
-  'components/Button/Submit'
-];
+const specificDeprecatedComponentFullPaths = {
+  ALERT: [
+    'components/wdx/Alert',
+  ],
+  ADD_LIST: [
+    'components/Lists/CreateList/Button',
+  ],
+  BUTTON: [
+    'components/Button', 
+    'components/Button/Spinner',
+    'components/Button/Submit',
+  ],
+  CARD: [
+    'components/wdx/Card',
+  ],
+  MODAL: [
+    'components/Modal',
+    'components/Modal/CommonModal',
+    'components/PortalModal',
+    'components/wdx/FormattedModal',
+  ],
+  TEXT_INPUT: [
+    'components/Form/TextInput',
+    'components/Forms/FormFields/InputText',
+    'components/Forms/ReduxFormFields/InputText',
+  ],
+};
+
+const isPathExcluded = path => path.includes('components/wdx/') || path.includes('.spec.js');
 
 let deprecatedComponentPaths = [];
-let filesIncludingDeprecatedButtons = [];
+let filesIncludingSpecificDeprecatedComponents = {};
 let filesIncludingDeprecatedComponents = [];
 let numDeprecatedComponentInstances = 0;
-let numDeprecatedButtonInstances = 0;
 let numIngredientsComponents = 0;
+let numSpecificDeprecatedComponentInstances = {};
 let numStoriesExports = 0;
 
 initDatabase();
@@ -54,68 +84,66 @@ while ((lineDep = linerDep.next())) {
 // Search for imports of these deprecated components in src code
 glob(`../wtr-website/src/**/*.js`, (err, files) => {
   files.forEach((file) => {
+    if (isPathExcluded(file)) {
+      return;
+    } 
     const linerSrc = new lineByLine(file);
     let lineSrc;
     while ((lineSrc = linerSrc.next())) {
       if (deprecatedComponentPaths.some(path => lineSrc.toString().includes(path))) {
         console.log('Found deprecated component:', lineSrc.toString());
-        filesIncludingDeprecatedComponents.push(file);
+        if (!filesIncludingDeprecatedComponents.includes(file)) {
+          filesIncludingDeprecatedComponents.push(file);
+        }
         numDeprecatedComponentInstances++;
       }      
-      if (deprecatedButtonFullPaths.some(path => lineSrc.toString().includes(`'${path}'`))) {
-        console.log('- And it\'s a button', lineSrc.toString());
-        filesIncludingDeprecatedButtons.push(file);
-        numDeprecatedButtonInstances++;
+      for (const componentKey of Object.keys(specificDeprecatedComponentFullPaths)) {
+        if (specificDeprecatedComponentFullPaths[componentKey].some(path => lineSrc.toString().includes(`'${path}'`))) {
+          console.log(`Found a(n) ${componentKey}...`, lineSrc.toString());
+          if (!filesIncludingSpecificDeprecatedComponents[componentKey]) {
+            filesIncludingSpecificDeprecatedComponents[componentKey] = [];
+          }
+          if (!filesIncludingSpecificDeprecatedComponents[componentKey].includes(file)) {
+            filesIncludingSpecificDeprecatedComponents[componentKey].push(file);
+          }
+          if (!numSpecificDeprecatedComponentInstances[componentKey]) {
+            numSpecificDeprecatedComponentInstances[componentKey] = 0;
+          }
+          numSpecificDeprecatedComponentInstances[componentKey]++;
+        }
       }
     }
   });
 
   updateStat('numDeprecatedComponentInstances', numDeprecatedComponentInstances);
-  updateStat('numDeprecatedButtonInstances', numDeprecatedButtonInstances);
+  updateStat('numDeprecatedButtonInstances', numSpecificDeprecatedComponentInstances[BUTTON]);
 
-  // Remove duplicates
-  let filesIncludingDeprecatedComponentsFiltered = [];
-  filesIncludingDeprecatedComponents.forEach(file => {
-    if (!filesIncludingDeprecatedComponentsFiltered.includes(file)) {
-      filesIncludingDeprecatedComponentsFiltered.push(file);
-    }
-  });
+  console.log('\n-- SPECIFIC DEPRECATED COMPONENTS --');
+
+  for (const componentKey of Object.keys(specificDeprecatedComponentFullPaths)) {
+    console.log(`Num of components using deprecated ${componentKey}`, filesIncludingSpecificDeprecatedComponents[componentKey]?.length ?? 0);
+    console.log(`Num of instances of deprecated ${componentKey}`, numSpecificDeprecatedComponentInstances[componentKey] ?? 0);
+  }
 
   /**
    * Components using deprecated components (by file)
    **/ 
 
-  // Filter out wdx components and spec files
-  filesIncludingDeprecatedComponentsFiltered = filesIncludingDeprecatedComponentsFiltered.filter(file => 
-    !file.includes('components/wdx/') && !file.includes('.spec.js'));
-
   console.log('--');
-  console.log('Files including deprecated components (filtered):\n');
-  filesIncludingDeprecatedComponentsFiltered.forEach(file => console.log(file.split('wtr-website')[1]));
+  console.log('Files including deprecated components:\n');
+  filesIncludingDeprecatedComponents.forEach(file => console.log(file.split('wtr-website')[1]));
 
-  updateStat('numDeprecatedComponentFiles', filesIncludingDeprecatedComponentsFiltered.length);
-
-  // Remove duplicates
-  let filesIncludingDeprecatedButtonsFiltered = [];
-  filesIncludingDeprecatedButtons.forEach(file => {
-    if (!filesIncludingDeprecatedButtonsFiltered.includes(file)) {
-      filesIncludingDeprecatedButtonsFiltered.push(file);
-    }
-  });
+  updateStat('numDeprecatedComponentFiles', filesIncludingDeprecatedComponents.length);
 
   /**
    * Components using deprecated buttons (by file)
    */
 
-  // Filter out the deprecated components themselves and spec files
-  filesIncludingDeprecatedButtonsFiltered = filesIncludingDeprecatedButtonsFiltered.filter(file => 
-    !file.includes('components/wdx/') && !file.includes('components/Button') && !file.includes('.spec.js'));
-  
   console.log('--');
   console.log('Files including deprecated buttons (filtered):\n');
-  filesIncludingDeprecatedButtonsFiltered.forEach(file => console.log(file.split('wtr-website')[1]));
+  filesIncludingSpecificDeprecatedComponents[BUTTON].forEach(file => console.log(file.split('wtr-website')[1]));
 
-  updateStat('numDeprecatedButtonFiles', filesIncludingDeprecatedButtonsFiltered.length);
+  updateStat('numDeprecatedButtonFiles', filesIncludingSpecificDeprecatedComponents[BUTTON].length);
 
 
 
@@ -126,8 +154,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   let filesIncludingDeprecatedComponentsMissingTeam = [];
   let filesIncludingDeprecatedButtonsMissingTeam = []
 
-  ///// Components...
-  filesIncludingDeprecatedComponentsFiltered.forEach(file => {
+  ///// Components by team...
+  filesIncludingDeprecatedComponents.forEach(file => {
     let foundTeam = false;
     for (const teamName of Object.keys(componentPathsByTeam)) {
       for (const path of componentPathsByTeam[teamName]) {
@@ -148,7 +176,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
     }
   });
 
-  console.log('\n-- COMPONENTS --');
+  console.log('\n-- COMPONENTS BY TEAM --');
 
   Object.keys(deprecatedComponentsByTeam).forEach(teamName => {
     console.log(`\n${teamName} team components using deprecated components:\n`);
@@ -158,8 +186,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   })
   
 
-  ///// Buttons...
-  filesIncludingDeprecatedButtonsFiltered.forEach(file => {
+  ///// Buttons by team...
+  filesIncludingSpecificDeprecatedComponents[BUTTON].forEach(file => {
     let foundTeam = false;
     for (const teamName of Object.keys(componentPathsByTeam)) {
       for (const path of componentPathsByTeam[teamName]) {
@@ -180,7 +208,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
     }
   });
 
-  console.log('\n-- BUTTONS --');
+  console.log('\n-- BUTTONS BY TEAM --');
+
   Object.keys(deprecatedButtonsByTeam).forEach(teamName => {    
     console.log(`\n${teamName} team components using deprecated buttons:\n`);
     deprecatedButtonsByTeam[teamName].forEach(file => console.log(file));
@@ -194,12 +223,12 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   console.log('\n-- COMPONENTS WITH DEPRECATED BUTTONS MISSING TEAMS --');
   filesIncludingDeprecatedButtonsMissingTeam.forEach(file => console.log(file));
 
-  console.log('--');
+  console.log('\n--');
   console.log('Number of components with deprecated components missing teams', filesIncludingDeprecatedComponentsMissingTeam.length);
   console.log('Number of components with deprecated buttons missing teams', filesIncludingDeprecatedButtonsMissingTeam.length);
 
-  updateStat('crossCuttingNumDeprecatedComponentFiles', filesIncludingDeprecatedComponentsFiltered.length - totalDeprecatedComponentsByTeam);
-  updateStat('crossCuttingNumDeprecatedButtonFiles', filesIncludingDeprecatedButtonsFiltered.length - totalDeprecatedButtonsByTeam);
+  updateStat('crossCuttingNumDeprecatedComponentFiles', filesIncludingDeprecatedComponents.length - totalDeprecatedComponentsByTeam);
+  updateStat('crossCuttingNumDeprecatedButtonFiles', filesIncludingSpecificDeprecatedComponents[BUTTON].length - totalDeprecatedButtonsByTeam);
 
   console.log('Tech debt per design system component', numDeprecatedComponentInstances / numIngredientsComponents);
 
