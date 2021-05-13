@@ -20,6 +20,9 @@ const specificDeprecatedComponentFullPaths = {
   ADD_LIST: [
     'components/Lists/CreateList/Button',
   ],
+  ADDRESS_TILE: [
+    'ingredients/AddressTile/', // NOTE trailing slash - but there is only one reference
+  ],
   BUTTON: [
     'components/Button', 
     'components/Button/Spinner',
