@@ -1,7 +1,7 @@
 import sqlite3 from 'sqlite3';
 import fs from 'fs';
 
-const RECREATE_DB = true; // switch to true when DB needs to be recreated during dev
+const RECREATE_DB = false; // switch to true when DB needs to be recreated during dev
 const dbFile = './data/sqlite.db';
 const dbTable = 'StatsValues';
 
