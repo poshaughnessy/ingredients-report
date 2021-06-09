@@ -52,14 +52,28 @@
         <h2>Buttons</h2>
         <div class="numbers">           
           <div class="down-is-good">
-            <h3>{{stats.numDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <h3>{{stats.numDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Components using deprecated buttons</p>
-            <stat-comparison v-bind:comparison="stats.numDeprecatedButtonFiles.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
-            <h3>{{stats.numDeprecatedButtonInstances.mostRecent.formatted}}</h3>
+            <h3>{{stats.numDeprecatedInstancesBUTTON.mostRecent.formatted}}</h3>
             <p>Instances of deprecated buttons</p>
-            <stat-comparison v-bind:comparison="stats.numDeprecatedButtonInstances.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedInstancesBUTTON.comparison"></stat-comparison>
+          </div>
+        </div>
+
+        <h2>Typography</h2>
+        <div class="numbers">           
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedFilesTYPOGRAPHY.mostRecent.formatted}}</h3>
+            <p>Components using deprecated typography</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedFilesTYPOGRAPHY.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedInstancesTYPOGRAPHY.mostRecent.formatted}}</h3>
+            <p>Instances of deprecated typography</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedInstancesTYPOGRAPHY.comparison"></stat-comparison>
           </div>
         </div>
 
@@ -120,26 +134,37 @@
         <h3>Components using deprecated buttons</h3>
         <div class="numbers"> 
           <div class="down-is-good">
-            <h3>{{stats.browseNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <h3>{{stats.browseNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Browse</p>
-            <stat-comparison v-bind:comparison="stats.browseNumDeprecatedButtonFiles.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.browseNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
-            <h3>{{stats.buyCheckoutNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <h3>{{stats.buyCheckoutNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Buy Checkout</p>
-            <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedButtonFiles.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
-            <h3>{{stats.contentNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <h3>{{stats.contentNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Content</p>
-            <stat-comparison v-bind:comparison="stats.contentNumDeprecatedButtonFiles.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.contentNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
-            <h3>{{stats.crossCuttingNumDeprecatedButtonFiles.mostRecent.formatted}}</h3>
+            <h3>{{stats.crossCuttingNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Cross-cutting</p>
-            <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedButtonFiles.comparison"></stat-comparison>
+            <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
         </div>
+        <!-- <div class="filelists">
+          <div>
+            <h3>Buttons</h3>
+            <p>Browse</p>
+            <ul>
+              <li v-for="file in browseDeprecatedComponentFilesBUTTON">
+                {{file}}
+              </li>
+            </ul>
+          </div>
+        </div> -->
 			</div>
 	</body>
 </html>
