@@ -11,7 +11,7 @@ Here's how to use this "MVP" version:
 3. Then to update the DB with the latest stats (at most once per day, but expected to be more like every week or two):
 
 ```
-node gather-stats
+node update
 ```
 
 4. Then to run the server and view the dashboard:
