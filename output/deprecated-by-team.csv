@@ -2,6 +2,8 @@ Team,Deprecated component,Found in filepath
 content,components/wdx/Card,/src/components/Accordion/Accordion.js
 content,components/wdx/Card,/src/components/RichText/index.js
 content,components/wdx/Modal,/src/components/ProductPicker/ProductPicker.js
+content,components/wdx/Alert,/src/components/CompetitionsForms/Sections/ErrorSummary/DuplicateEntry.js
+content,components/wdx/Alert,/src/components/CompetitionsForms/Sections/ErrorSummary/SummaryBox.js
 content,components/wdx/Iconography,/src/components/CmsPage/partials/ServiceSelector.js
 content,components/Button,/src/components/FullWidthNavigation/index.js
 content,components/Button,/src/components/TradingComponent/Button/index.js

@@ -31,6 +31,8 @@ export const componentPathsByTeam = {
     'components/PageTitle',
     'components/ProceedThroughCheckout',
     'components/Product/',
+    'components/ProductGrid',
+    'components/ProductPod',
     'components/ProductDetails',
     'components/Search',
     'components/ShoppingList',
@@ -64,6 +66,7 @@ export const componentPathsByTeam = {
   content: [
     'components/Accordion',
     'components/CmsPage',
+    'components/CompetitionsForms',
     'components/FullWidthNavigation',
     'components/ProductPicker',
     'components/RichText',
@@ -79,6 +82,7 @@ export const componentPathsByTeam = {
   ],
   identity: [
     'components/Authentication',
+    'components/ForgotPassword',
     'components/Forms/validators/getPasswordValidator',
     'components/Login',
     'components/Logout',
@@ -89,6 +93,7 @@ export const componentPathsByTeam = {
   ],
   loyalty: [
     'components/CookieAlert',
+    'components/DigitalVoucher',
     'components/DigitalWallet',
     'components/LeaveMyWaitrose',
     'components/MarketingPreferences',
@@ -105,30 +110,31 @@ export const componentPathsByTeam = {
  * These ones are for exact matches rather than checking just included in path
  */
 export const priorityDeprecatedComponentPaths = {
-  ADD_LIST: ['components/Lists/CreateList/Button'],
-  ALERT: ['components/wdx/Alert'],
-  ADDRESS_TILE: [
-    'ingredients/AddressTile/', // NOTE trailing slash - but there is only one reference
-  ],
   ANCHOR_LINK: ['components/AnchorLink'],
   BUTTON: [
-    // TODO add EditButton etc from wdx
     'components/Button',
     'components/Button/Spinner',
     'components/Button/Submit',
+    'components/wdx/buttons/EditButton',
+    'components/wdx/buttons/ViewOrder',
   ],
-  CARD: ['components/wdx/Card'],
   ICONS: ['components/wdx/Iconography'],
-  MODAL: [
-    'components/Modal',
-    'components/Modal/CommonModal',
-    'components/PortalModal',
-    'components/wdx/FormattedModal',
-  ],
-  TEXT_INPUT: [
-    'components/Form/TextInput',
-    'components/Forms/FormFields/InputText',
-    'components/Forms/ReduxFormFields/InputText',
-  ],
   TYPOGRAPHY: ['components/wdx/Text'],
+  // ADD_LIST: ['components/Lists/CreateList/Button'],
+  // ALERT: ['components/wdx/Alert'],
+  // ADDRESS_TILE: [
+  //   'ingredients/AddressTile/', // NOTE trailing slash - but there is only one reference
+  // ],
+  // CARD: ['components/wdx/Card'],
+  // MODAL: [
+  //   'components/Modal',
+  //   'components/Modal/CommonModal',
+  //   'components/PortalModal',
+  //   'components/wdx/FormattedModal',
+  // ],
+  // TEXT_INPUT: [
+  //   'components/Form/TextInput',
+  //   'components/Forms/FormFields/InputText',
+  //   'components/Forms/ReduxFormFields/InputText',
+  // ],
 };
