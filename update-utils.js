@@ -73,9 +73,18 @@ export const addFileWithPriorityDeprecatedByTeam = (
   if (!priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey]) {
     priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey] = [];
   }
-  priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].push(
-    fileWithPriorityDeprecated,
-  );
+  if (
+    !priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].includes(
+      fileWithPriorityDeprecated,
+    )
+  ) {
+    priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].push(
+      fileWithPriorityDeprecated,
+    );
+  }
+  if (!totalPriorityDeprecatedByTeam[teamName]) {
+    totalPriorityDeprecatedByTeam[teamName] = 0;
+  }
   totalPriorityDeprecatedByTeam[teamName]++;
 };
 
@@ -155,7 +164,7 @@ export const logPriorityDeprecatedFilesAndCounts = (
     numPriorityDeprecatedInstances[componentKey] ?? 0,
   );
 
-  console.log(`Files including deprecated ${componentKey} (filtered):\n`);
+  console.log(`\nFiles including deprecated ${componentKey}:\n`);
   filesWithPriorityDeprecated[componentKey].forEach((file) => console.log(file));
 };
 

@@ -94,11 +94,6 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   updateDeprecatedFilesAndCounts(filesWithDeprecated, numDeprecatedInstances);
 
-  updatePriorityDeprecatedFilesAndCounts(
-    filesWithPriorityDeprecated,
-    numPriorityDeprecatedInstances,
-  );
-
   // Components by team...
   Object.keys(filesWithDeprecatedByComponent).forEach((componentPath) => {
     filesWithDeprecatedByComponent[componentPath].forEach((fileWithDeprecated) => {
