@@ -161,8 +161,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   updateStat('techDebtPerDesignSystemComponent', numDeprecatedInstances / numIngredientsComponents);
 
   // Write CSVs with file path info (temporary - next step to include in dashboard)
-  generateDeprecatedCsv();
-  generatePriorityDeprecatedCsv();
+  generateDeprecatedCsv(deprecatedComponentsByTeam);
+  generatePriorityDeprecatedCsv(priorityDeprecatedComponentsByTeam);
 });
 
 console.log('Finished');

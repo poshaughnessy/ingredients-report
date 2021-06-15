@@ -3,7 +3,7 @@ import objectsToCsv from 'objects-to-csv';
 const DEPRECATED_CSV_FILEPATH = './output/deprecated-by-team.csv';
 const PRIORITY_DEPRECATED_CSV_FILEPATH = './output/priority-deprecated-by-team.csv';
 
-export const generateDeprecatedCsv = async () => {
+export const generateDeprecatedCsv = async (deprecatedComponentsByTeam) => {
   let csvData = [];
   Object.keys(deprecatedComponentsByTeam).forEach((componentPath) => {
     Object.keys(deprecatedComponentsByTeam[componentPath]).forEach((teamName) => {
@@ -22,7 +22,7 @@ export const generateDeprecatedCsv = async () => {
   console.log('\nWritten CSV', DEPRECATED_CSV_FILEPATH);
 };
 
-export const generatePriorityDeprecatedCsv = async () => {
+export const generatePriorityDeprecatedCsv = async (priorityDeprecatedComponentsByTeam) => {
   let csvData = [];
   Object.keys(priorityDeprecatedComponentsByTeam).forEach((componentKey) => {
     Object.keys(priorityDeprecatedComponentsByTeam[componentKey]).forEach((teamName) => {
