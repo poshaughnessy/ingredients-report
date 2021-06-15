@@ -95,16 +95,16 @@ export const findTeamFromFilepath = (filepath) => {
   }
 };
 
-export const getDeprecatedComponentPaths = () => {
+export const getDeprecatedComponentPaths = (log = true) => {
   const linerDep = new lineByLine(`../wtr-website/deprecated-components`);
   let lineDep;
+  let resultArray = [];
   while ((lineDep = linerDep.next())) {
     const deprecatedPath = lineDep.toString().split('=>')[0];
-
-    console.log('Deprecated path:', deprecatedPath);
-
-    deprecatedComponentPaths.push(deprecatedPath);
+    if (log) console.log('Deprecated path:', deprecatedPath);
+    resultArray.push(deprecatedPath);
   }
+  return resultArray;
 };
 
 export const logDeprecatedFilesAndCounts = (filesWithDeprecated, numDeprecatedInstances) => {
