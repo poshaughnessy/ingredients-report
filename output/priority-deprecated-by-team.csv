@@ -239,3 +239,5 @@ content,ICONS,/src/components/CmsPage/partials/ServiceSelector.js
 content,ICONS,/src/components/TradingComponent/Button/index.js
 buyTrolley,ICONS,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 buyTrolley,MODAL,/src/components/Trolley/Trolley.js
+recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
+recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
