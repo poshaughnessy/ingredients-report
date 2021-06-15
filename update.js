@@ -94,7 +94,6 @@ glob(`../wtr-website/src/**/*.js`, async (err, files) => {
   updateDeprecatedFilesAndCounts(filesWithDeprecated, numDeprecatedInstances);
 
   updatePriorityDeprecatedFilesAndCounts(
-    priorityDeprecatedComponentPaths,
     filesWithPriorityDeprecated,
     numPriorityDeprecatedInstances,
   );
@@ -117,7 +116,12 @@ glob(`../wtr-website/src/**/*.js`, async (err, files) => {
 
   updateDeprecatedByTeamFilesAndCounts(deprecatedComponentsByTeam);
 
-  // Priority components by team
+  updateDeprecatedMissingTeamFilesAndCounts(
+    filesWithDeprecatedMissingTeam,
+    totalDeprecatedComponentsWithTeam,
+  );
+
+  // Priority components by team - TODO CHECK THIS DOES NOT LOOK RIGHT?
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
     filesWithPriorityDeprecated[componentKey].forEach((fileWithPriorityDeprecated) => {
       const teamName = findTeamFromFilepath(fileWithPriorityDeprecated);
@@ -137,10 +141,11 @@ glob(`../wtr-website/src/**/*.js`, async (err, files) => {
     });
   }
 
-  updateDeprecatedMissingTeamFilesAndCounts(
-    filesWithDeprecatedMissingTeam,
-    totalDeprecatedComponentsWithTeam,
+  updatePriorityDeprecatedFilesAndCounts(
+    filesWithPriorityDeprecated,
+    numPriorityDeprecatedInstances,
   );
+
   updatePriorityDeprecatedMissingTeamFilesAndCounts(
     filesWithPriorityDeprecatedMissingTeam,
     totalDeprecatedByTeam,

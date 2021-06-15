@@ -1,7 +1,7 @@
 import lineByLine from 'n-readlines';
 import { updateStat } from './db.js';
 
-import { componentPathsByTeam } from './context.js';
+import { componentPathsByTeam, priorityDeprecatedComponentPaths } from './context.js';
 
 export const addFileWithDeprecated = (
   filesWithDeprecated,
@@ -210,7 +210,6 @@ export const updateDeprecatedByTeamFilesAndCounts = (deprecatedComponentsByTeam,
 };
 
 export const updatePriorityDeprecatedFilesAndCounts = (
-  priorityDeprecatedComponentPaths,
   filesWithPriorityDeprecated,
   numPriorityDeprecatedInstances,
   log = true,
