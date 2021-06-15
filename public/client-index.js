@@ -55,6 +55,16 @@ getMostRecentStats()
           TYPOGRAPHY: 'Typography',
         };
 
+        data.priorityComponentsForTeam = (team) => {
+          const components = [];
+          Object.keys(data.priorityComponents).forEach((component) => {
+            if (data.stats[`${team}NumDeprecatedFiles${component}`]) {
+              components.push({ key: component, name: data.priorityComponents[component] });
+            }
+          });
+          return components;
+        };
+
         data.teams = {
           account: 'Account',
           browse: 'Browse',
