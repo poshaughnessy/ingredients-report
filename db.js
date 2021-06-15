@@ -1,7 +1,8 @@
 import sqlite3 from 'sqlite3';
 import fs from 'fs';
 
-const RECREATE_DB = false; // switch to true when DB needs to be recreated during dev
+const RECREATE_DB = true; // switch to true when DB needs to be recreated during dev
+
 const dbFile = './data/sqlite.db';
 const dbTable = 'StatsValues';
 
@@ -62,8 +63,8 @@ export function getComparisonStats() {
   return new Promise((resolve, reject) => {
     db.all(
       `SELECT * from ${dbTable} sv1 WHERE
-      timestamp = (SELECT MAX(timestamp) 
-      FROM ${dbTable} sv2 WHERE sv1.key = sv2.key 
+      timestamp = (SELECT MAX(timestamp)
+      FROM ${dbTable} sv2 WHERE sv1.key = sv2.key
       AND timestamp NOT IN (SELECT MAX(timestamp) FROM ${dbTable} sv3 WHERE sv1.key = sv3.key))`,
       function (err, rows) {
         if (err) {

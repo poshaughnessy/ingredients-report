@@ -128,12 +128,12 @@ export const getDeprecatedComponentPaths = (log = true) => {
 };
 
 export const logDeprecatedFilesAndCounts = (filesWithDeprecated, numDeprecatedInstances) => {
-  console.log('--');
+  console.log('\n--');
   console.log('Files with deprecated components:\n');
 
   filesWithDeprecated.forEach((file) => console.log(file));
 
-  console.log('numDeprecatedComponentFiles', filesWithDeprecated.length);
+  console.log('\nnumDeprecatedComponentFiles', filesWithDeprecated.length);
   console.log('numDeprecatedComponentInstances', numDeprecatedInstances);
 };
 
@@ -142,12 +142,21 @@ export const logDeprecatedComponentsByTeam = (deprecatedComponentsByTeam, teamNa
   deprecatedComponentsByTeam[teamName].forEach((file) => console.log(file));
 };
 
+export const logDeprecatedMissingTeamFilesAndCounts = (filesWithDeprecatedMissingTeam) => {
+  console.log('\n-- Files with deprecated components missing teams --');
+  filesWithDeprecatedMissingTeam.forEach((file) => console.log(file));
+  console.log(
+    '\nNumber of files with deprecated components missing teams',
+    filesWithDeprecatedMissingTeam.length,
+  );
+};
+
 export const logPriorityDeprecatedFilesAndCounts = (
   componentKey,
   filesWithPriorityDeprecated,
   numPriorityDeprecatedInstances,
 ) => {
-  console.log('--');
+  console.log('\n--');
   console.log(
     `Num of files with deprecated ${componentKey}`,
     filesWithPriorityDeprecated[componentKey]?.length ?? 0,
@@ -161,47 +170,39 @@ export const logPriorityDeprecatedFilesAndCounts = (
   filesWithPriorityDeprecated[componentKey].forEach((file) => console.log(file));
 };
 
-export const logPriorityDeprecatedFilesAndCountsByTeam = () => {
+export const logPriorityDeprecatedByTeamFilesAndCounts = (
+  priorityDeprecatedComponentsByTeamAndComponent,
+) => {
   console.log('\n-- Priority Components By Team --');
 
-  Object.keys(deprecatedSpecificComponentsByTeam).forEach((componentKey) => {
-    Object.keys(deprecatedSpecificComponentsByTeam[componentKey]).forEach((teamName) => {
-      console.log(`\n${teamName} team files using deprecated ${componentKey}:\n`);
-      deprecatedSpecificComponentsByTeam[componentKey][teamName].forEach((file) =>
-        console.log(file),
-      );
+  Object.keys(priorityDeprecatedComponentsByTeamAndComponent).forEach((teamName) => {
+    Object.keys(priorityDeprecatedComponentsByTeamAndComponent[teamName]).forEach(
+      (componentKey) => {
+        console.log(
+          `\n-- ${teamName} team files using deprecated ${componentKey} (${priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].length}) --`,
+        );
+        priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].forEach((file) =>
+          console.log(file),
+        );
 
-      updateStat(
-        `${teamName}NumDeprecatedFiles${componentKey}`,
-        deprecatedSpecificComponentsByTeam[componentKey][teamName].length,
-      );
-    });
+        updateStat(
+          `${teamName}NumDeprecatedFiles${componentKey}`,
+          priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].length,
+        );
+      },
+    );
   });
-};
-
-export const logDeprecatedMissingTeamFilesAndCounts = (filesWithDeprecatedMissingTeam) => {
-  console.log('\n-- Files with deprecated components missing teams --');
-  filesWithDeprecatedMissingTeam.forEach((file) => console.log(file));
-  console.log(
-    '\nNumber of files with deprecated components missing teams',
-    filesWithDeprecatedMissingTeam.length,
-  );
 };
 
 export const logPriorityDeprecatedMissingTeamFilesAndCounts = (
   filesWithPriorityDeprecatedMissingTeam,
 ) => {
   Object.keys(filesWithPriorityDeprecatedMissingTeam).forEach((componentKey) => {
-    console.log(`\n-- Files with deprecated priority ${componentKey} components missing teams --`);
+    console.log(
+      `\n-- Files with deprecated priority ${componentKey} components missing teams (${filesWithPriorityDeprecatedMissingTeam[componentKey].length}) --`,
+    );
     filesWithPriorityDeprecatedMissingTeam[componentKey].forEach((file) => console.log(file));
   });
-
-  for (const componentKey of Object.keys(filesWithPriorityDeprecatedMissingTeam)) {
-    console.log(
-      `\nNumber of files with deprecated ${componentKey} missing teams`,
-      filesWithPriorityDeprecatedMissingTeam[componentKey].length,
-    );
-  }
 };
 
 export const updateDeprecatedFilesAndCounts = (
@@ -250,6 +251,26 @@ export const updatePriorityDeprecatedFilesAndCounts = (
       numPriorityDeprecatedInstances[componentKey],
     );
   }
+};
+
+export const updatePriorityDeprecatedByTeamFilesAndCounts = (
+  priorityDeprecatedComponentsByTeamAndComponent,
+  log = true,
+) => {
+  if (log) {
+    logPriorityDeprecatedByTeamFilesAndCounts(priorityDeprecatedComponentsByTeamAndComponent);
+  }
+
+  Object.keys(priorityDeprecatedComponentsByTeamAndComponent).forEach((teamName) => {
+    Object.keys(priorityDeprecatedComponentsByTeamAndComponent[teamName]).forEach(
+      (componentKey) => {
+        updateStat(
+          `${teamName}numDeprecatedFiles${componentKey}`,
+          priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].length,
+        );
+      },
+    );
+  });
 };
 
 export const updateDeprecatedMissingTeamFilesAndCounts = (

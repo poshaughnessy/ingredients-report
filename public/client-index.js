@@ -85,6 +85,8 @@ getMostRecentStats()
           el: '#general-stats',
           data: data,
         });
+
+        console.log('stats', data.stats);
       })
       .catch((err) => {
         console.error('Error', err);

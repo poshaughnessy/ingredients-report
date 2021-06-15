@@ -6,17 +6,18 @@ import { priorityDeprecatedComponentPaths } from './context.js';
 import { generateDeprecatedCsv, generatePriorityDeprecatedCsv } from './csv-generator.js';
 import {
   addFileWithDeprecated,
-  addFileWithPriorityDeprecated,
   addFileWithDeprecatedByTeam,
+  addFileWithPriorityDeprecated,
   addFileWithPriorityDeprecatedByTeam,
   addFileWithPriorityDeprecatedMissingTeam,
   countStoriesExports,
   findTeamFromFilepath,
   getDeprecatedComponentPaths,
-  updateDeprecatedFilesAndCounts,
   updateDeprecatedByTeamFilesAndCounts,
-  updatePriorityDeprecatedFilesAndCounts,
+  updateDeprecatedFilesAndCounts,
   updateDeprecatedMissingTeamFilesAndCounts,
+  updatePriorityDeprecatedByTeamFilesAndCounts,
+  updatePriorityDeprecatedFilesAndCounts,
   updatePriorityDeprecatedMissingTeamFilesAndCounts,
 } from './update-utils.js';
 import { initDatabase, updateStat } from './db.js';
@@ -139,6 +140,8 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
     filesWithPriorityDeprecated,
     numPriorityDeprecatedInstances,
   );
+
+  updatePriorityDeprecatedByTeamFilesAndCounts(priorityDeprecatedComponentsByTeamAndComponent);
 
   updatePriorityDeprecatedMissingTeamFilesAndCounts(filesWithPriorityDeprecatedMissingTeam);
 
