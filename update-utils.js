@@ -68,12 +68,13 @@ export const addFileWithPriorityDeprecatedByTeam = (
 
 export const addFileWithPriorityDeprecatedMissingTeam = (
   componentKey,
+  fileWithPriorityDeprecated,
   filesWithPriorityDeprecatedMissingTeam,
 ) => {
   if (!filesWithPriorityDeprecatedMissingTeam[componentKey]) {
     filesWithPriorityDeprecatedMissingTeam[componentKey] = [];
   }
-  filesWithPriorityDeprecatedMissingTeam[componentKey].push(file);
+  filesWithPriorityDeprecatedMissingTeam[componentKey].push(fileWithPriorityDeprecated);
 };
 
 export const countStoriesExports = (files) => {

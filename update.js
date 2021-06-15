@@ -137,6 +137,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
       } else {
         addFileWithPriorityDeprecatedMissingTeam(
           componentKey,
+          fileWithPriorityDeprecated,
           filesWithPriorityDeprecatedMissingTeam,
         );
       }
