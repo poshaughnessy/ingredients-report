@@ -261,7 +261,7 @@ export const updatePriorityDeprecatedMissingTeamFilesAndCounts = (
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
     updateStat(
       `crossCuttingNumDeprecatedFiles${componentKey}`,
-      filesWithPriorityDeprecated[componentKey].length -
+      filesWithPriorityDeprecatedMissingTeam[componentKey].length -
         totalPriorityDeprecatedByTeam[componentKey],
     );
   }
