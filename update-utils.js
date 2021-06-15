@@ -38,8 +38,10 @@ export const addFileWithPriorityDeprecated = (
 
 export const addFileWithDeprecatedByTeam = (
   teamName,
+  componentPath,
   fileWithDeprecated,
   deprecatedComponentsByTeam,
+  deprecatedComponentsByTeamAndComponentPath,
   totalDeprecatedComponentsWithTeam,
 ) => {
   if (!deprecatedComponentsByTeam[teamName]) {
@@ -47,6 +49,12 @@ export const addFileWithDeprecatedByTeam = (
   }
   deprecatedComponentsByTeam[teamName].push(fileWithDeprecated);
   totalDeprecatedComponentsWithTeam++;
+
+  // Also store with the componentPath to be able to output that too
+  if (!deprecatedComponentsByTeamAndComponentPath[teamName][componentPath]) {
+    deprecatedComponentsByTeamAndComponentPath[teamName][componentPath] = [];
+  }
+  deprecatedComponentsByTeamAndComponentPath[teamName][componentPath].push(fileWithDeprecated);
 };
 
 export const addFileWithPriorityDeprecatedByTeam = (

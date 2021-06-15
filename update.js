@@ -25,6 +25,7 @@ const deprecatedComponentPaths = getDeprecatedComponentPaths();
 const isPathExcluded = (path) => path.includes('components/wdx/') || path.includes('.spec.js');
 
 let deprecatedComponentsByTeam = {};
+let deprecatedComponentsByTeamAndComponentPath = {};
 let filesWithPriorityDeprecatedMissingTeam = {};
 let filesWithDeprecated = [];
 let filesWithDeprecatedByComponent = {};
@@ -105,8 +106,10 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
       if (teamName) {
         addFileWithDeprecatedByTeam(
           teamName,
+          componentPath,
           fileWithDeprecated,
           deprecatedComponentsByTeam,
+          deprecatedComponentsByTeamAndComponentPath,
           totalDeprecatedComponentsWithTeam,
         );
       } else {
@@ -161,7 +164,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   updateStat('techDebtPerDesignSystemComponent', numDeprecatedInstances / numIngredientsComponents);
 
   // Write CSVs with file path info (temporary - next step to include in dashboard)
-  generateDeprecatedCsv(deprecatedComponentsByTeam);
+  generateDeprecatedCsv(deprecatedComponentsByTeamAndComponentPath);
   generatePriorityDeprecatedCsv(priorityDeprecatedComponentsByTeam);
 });
 
