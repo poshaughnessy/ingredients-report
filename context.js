@@ -3,8 +3,8 @@
  * Intended to be used for 'includes' string matches rather than exact match.
  * For example, 'components/Address' would also match 'components/AddressSearch'.
  */
-const componentPathsByTeam = {
-  'account': [
+export const componentPathsByTeam = {
+  account: [
     'components/Address',
     'components/MarketingPreferences',
     'components/MyAccount',
@@ -12,7 +12,7 @@ const componentPathsByTeam = {
     'components/SeachNavigateBack', // used for AddressSearch (note misspelling)
     'ingredients/AddressTile',
   ],
-  'browse': [
+  browse: [
     'components/AddAllItemsErrorModal',
     'components/AppBanner',
     'components/BackToTop',
@@ -38,11 +38,11 @@ const componentPathsByTeam = {
     'components/SiteSideBar',
     'components/TrolleyActions',
   ],
-  'buyCheckout': [
+  buyCheckout: [
     'components/AddGiftCard',
     'components/AddGiftVoucher',
     'components/AddToCalendar',
-    'components/Checkout', 
+    'components/Checkout',
     'components/Forms/ReduxFormFields/CardSecurityNumber',
     'components/Forms/ReduxFormFields/ExpiryDate',
     'components/GiftCard',
@@ -53,17 +53,15 @@ const componentPathsByTeam = {
     'components/MyPaymentCards',
     'components/OrderDetails',
     'components/OrderTotals',
-    'components/PartnerDiscount', 
+    'components/PartnerDiscount',
     'components/PaymentCard',
     'components/PaymentSavedCard',
     'components/PendingOrderSummary',
     'components/PreviousOrderSummary',
-    'components/ViewOrder'
+    'components/ViewOrder',
   ],
-  'buyTrolley': [
-    'components/Trolley/',
-  ],
-  'content': [
+  buyTrolley: ['components/Trolley/'],
+  content: [
     'components/Accordion',
     'components/CmsPage',
     'components/FullWidthNavigation',
@@ -73,13 +71,13 @@ const componentPathsByTeam = {
     'components/TradingComponent',
     'components/WhyWaitrose',
   ],
-  'customerServiceAndComms': [
+  customerServiceAndComms: [
     'components/ContactUsCard',
     'components/CustomerServiceForms',
     'components/Forms/utilities/ImageUpload',
     'components/Forms/utilities/SearchSelect',
   ],
-  'identity': [
+  identity: [
     'components/Authentication',
     'components/Forms/validators/getPasswordValidator',
     'components/Login',
@@ -89,7 +87,7 @@ const componentPathsByTeam = {
     'components/ReturnToAdmin',
     'ingredients/forms/PasswordInput',
   ],
-  'loyalty': [
+  loyalty: [
     'components/CookieAlert',
     'components/DigitalWallet',
     'components/LeaveMyWaitrose',
@@ -99,9 +97,35 @@ const componentPathsByTeam = {
     'components/PromoCode',
     'components/PromoItem',
   ],
-  'slots' : [
-    'components/BookSlot',
-  ]
+  slots: ['components/BookSlot'],
 };
 
-export default componentPathsByTeam;
+// Exact matches rather than checking just included in path
+export const priorityDeprecatedComponentPaths = {
+  ADD_LIST: ['components/Lists/CreateList/Button'],
+  ALERT: ['components/wdx/Alert'],
+  ADDRESS_TILE: [
+    'ingredients/AddressTile/', // NOTE trailing slash - but there is only one reference
+  ],
+  ANCHOR_LINK: ['components/AnchorLink'],
+  BUTTON: [
+    // TODO add EditButton etc from wdx
+    'components/Button',
+    'components/Button/Spinner',
+    'components/Button/Submit',
+  ],
+  CARD: ['components/wdx/Card'],
+  ICONS: ['components/wdx/Iconography'],
+  MODAL: [
+    'components/Modal',
+    'components/Modal/CommonModal',
+    'components/PortalModal',
+    'components/wdx/FormattedModal',
+  ],
+  TEXT_INPUT: [
+    'components/Form/TextInput',
+    'components/Forms/FormFields/InputText',
+    'components/Forms/ReduxFormFields/InputText',
+  ],
+  TYPOGRAPHY: ['components/wdx/Text'],
+};

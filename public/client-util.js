@@ -4,6 +4,7 @@
  * Otherwise use 2 decimal points by default
  */
 function formatNumberValue(number, forceThousandsFormat) {
+  if (number === null) return '-';
   return forceThousandsFormat || Math.abs(number) >= 1000
     ? (number / 1000).toFixed(1) + 'K'
     : number === Math.floor(number) ? number : number.toFixed(2);
