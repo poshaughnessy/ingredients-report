@@ -51,6 +51,9 @@ export const addFileWithDeprecatedByTeam = (
   totalDeprecatedComponentsWithTeam++;
 
   // Also store with the componentPath to be able to output that too
+  if (!deprecatedComponentsByTeamAndComponentPath[teamName]) {
+    deprecatedComponentsByTeamAndComponentPath[teamName] = {};
+  }
   if (!deprecatedComponentsByTeamAndComponentPath[teamName][componentPath]) {
     deprecatedComponentsByTeamAndComponentPath[teamName][componentPath] = [];
   }
@@ -102,7 +105,7 @@ export const countStoriesExports = (files) => {
 export const findTeamFromFilepath = (filepath) => {
   for (const teamName of Object.keys(componentPathsByTeam)) {
     for (const path of componentPathsByTeam[teamName]) {
-      return filepath.includes(path);
+      if (filepath.includes(path)) return teamName;
     }
     return null;
   }

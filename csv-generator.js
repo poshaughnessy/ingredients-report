@@ -7,10 +7,6 @@ export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndCompone
   let csvData = [];
   Object.keys(deprecatedComponentsByTeamAndComponentPath).forEach((componentPath) => {
     Object.keys(deprecatedComponentsByTeamAndComponentPath[componentPath]).forEach((teamName) => {
-      console.log(
-        '>>>>>>>>>>> deprecatedComponentsByTeamAndComponentPath[componentPath][teamName]',
-        deprecatedComponentsByTeamAndComponentPath[componentPath][teamName],
-      );
       deprecatedComponentsByTeamAndComponentPath[componentPath][teamName].forEach((filepath) => {
         csvData.push({
           Team: teamName,
