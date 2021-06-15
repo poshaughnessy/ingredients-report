@@ -18,10 +18,10 @@
 	<body>
 		<main id="general-stats" v-cloak>
       <h1>Ingredients Report <span class="last-updated">Last updated: <span class="last-updated-time">{{lastUpdatedTime}}</span></h1>
-      <div>     
+      <div>
 
         <h2>Overview</h2>
-        <div class="numbers">          
+        <div class="numbers">
           <div>
             <h3>{{stats.numIngredientsComponents.mostRecent.formatted}}</h3>
 						<p>Ingredients components</p>
@@ -41,16 +41,30 @@
             <h3>{{stats.numDeprecatedComponentInstances.mostRecent.formatted}}</h3>
             <p>Instances of deprecated components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedComponentInstances.comparison"></stat-comparison>
-          </div>    
+          </div>
           <div class="down-is-good">
             <h3>{{stats.techDebtPerDesignSystemComponent.mostRecent.formatted}}</h3>
             <p>Tech debt per Ingredients component</p>
             <stat-comparison v-bind:comparison="stats.techDebtPerDesignSystemComponent.comparison"></stat-comparison>
-          </div>      
+          </div>
 				</div>
 
+        <h2>Anchorlinks</h2>
+        <div class="numbers">
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedFilesANCHOR_LINK.mostRecent.formatted}}</h3>
+            <p>Components using to-be-deprecated anchor links</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedFilesANCHOR_LINK.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedInstancesANCHOR_LINK.mostRecent.formatted}}</h3>
+            <p>Instances of to-be-deprecated anchor links</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedInstancesANCHOR_LINK.comparison"></stat-comparison>
+          </div>
+        </div>
+
         <h2>Buttons</h2>
-        <div class="numbers">           
+        <div class="numbers">
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
             <p>Components using deprecated buttons</p>
@@ -63,8 +77,22 @@
           </div>
         </div>
 
+        <h2>Icons</h2>
+        <div class="numbers">
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedFilesICONS.mostRecent.formatted}}</h3>
+            <p>Components using deprecated icons</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedFilesICONS.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedInstancesICONS.mostRecent.formatted}}</h3>
+            <p>Instances of deprecated icons</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedInstancesICONS.comparison"></stat-comparison>
+          </div>
+        </div>
+
         <h2>Typography</h2>
-        <div class="numbers">           
+        <div class="numbers">
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesTYPOGRAPHY.mostRecent.formatted}}</h3>
             <p>Components using deprecated typography</p>
@@ -78,8 +106,9 @@
         </div>
 
         <h2>Teams</h2>
+
         <h3>Components using deprecated components</h3>
-        <div class="numbers"> 
+        <div class="numbers">
           <div class="down-is-good">
             <h3>{{stats.accountNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Account</p>
@@ -131,40 +160,42 @@
             <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedComponentFiles.comparison"></stat-comparison>
           </div>
         </div>
-        <h3>Components using deprecated buttons</h3>
-        <div class="numbers"> 
-          <div class="down-is-good">
-            <h3>{{stats.browseNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
-            <p>Browse</p>
-            <stat-comparison v-bind:comparison="stats.browseNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
-          </div>
-          <div class="down-is-good">
-            <h3>{{stats.buyCheckoutNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
-            <p>Buy Checkout</p>
-            <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
-          </div>
-          <div class="down-is-good">
-            <h3>{{stats.contentNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
-            <p>Content</p>
-            <stat-comparison v-bind:comparison="stats.contentNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
-          </div>
-          <div class="down-is-good">
-            <h3>{{stats.crossCuttingNumDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
-            <p>Cross-cutting</p>
-            <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedFilesBUTTON.comparison"></stat-comparison>
+
+        <h3>Components using to-be-deprecated anchor links</h3>
+        <div class="numbers">
+          <div class="down-is-good" v-for="(teamName, teamKey) in teams">
+            <h3>{{stats[`${teamKey}NumDeprecatedFilesANCHOR_LINK`].mostRecent.formatted}}</h3>
+            <p>{{teamName}}</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponent(teamKey, 'ANCHOR_LINK')"></stat-comparison>
           </div>
         </div>
-        <!-- <div class="filelists">
-          <div>
-            <h3>Buttons</h3>
-            <p>Browse</p>
-            <ul>
-              <li v-for="file in browseDeprecatedComponentFilesBUTTON">
-                {{file}}
-              </li>
-            </ul>
+
+        <h3>Components using deprecated buttons</h3>
+        <div class="numbers">
+          <div class="down-is-good" v-for="(teamName, teamKey) in teams">
+            <h3>{{stats[`${teamKey}NumDeprecatedFilesBUTTON`].mostRecent.formatted}}</h3>
+            <p>{{teamName}}</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponent(teamKey, 'BUTTON')"></stat-comparison>
           </div>
-        </div> -->
+        </div>
+
+        <h3>Components using deprecated icons</h3>
+        <div class="numbers">
+          <div class="down-is-good" v-for="(teamName, teamKey) in teams">
+            <h3>{{stats[`${teamKey}NumDeprecatedFilesICONS`].mostRecent.formatted}}</h3>
+            <p>{{teamName}}</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponent(teamKey, 'ICONS')"></stat-comparison>
+          </div>
+        </div>
+
+        <h3>Components using deprecated typography</h3>
+        <div class="numbers">
+          <div class="down-is-good" v-for="(teamName, teamKey) in teams">
+            <h3>{{stats[`${teamKey}NumDeprecatedFilesTYPOGRAPHY`].mostRecent.formatted}}</h3>
+            <p>{{teamName}}</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponent(teamKey, 'TYPOGRAPHY')"></stat-comparison>
+          </div>
+        </div>
 			</div>
 	</body>
 </html>

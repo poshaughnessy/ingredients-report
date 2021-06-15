@@ -48,6 +48,24 @@ getMostRecentStats()
           data.error = true;
         }
 
+        data.teams = {
+          account: 'Account',
+          browse: 'Browse',
+          buyCheckout: 'Buy Checkout',
+          buyTrolley: 'Buy Trolley',
+          content: 'Content',
+          customerServiceAndComms: 'Customer Service & Comms',
+          identity: 'Identity',
+          loyalty: 'Loyalty',
+          // recipes: 'Recipes',
+          slots: 'Slots',
+          crossCutting: 'Cross-cutting',
+        };
+
+        data.comparisonByTeamAndComponent = (team, component) => {
+          return data.stats[`${team}NumDeprecatedFiles${component}`].comparison;
+        };
+
         new Vue({
           el: '#general-stats',
           data: data,
@@ -64,7 +82,7 @@ getMostRecentStats()
 Vue.component('stat-comparison', {
   props: ['comparison'],
   template: `<p class="change" v-if="comparison">
-              <template v-if="comparison.change === 0"> 
+              <template v-if="comparison.change === 0">
                 <span class="arrow same">‒</span>
               </template>
               <template v-else-if="comparison.change > 0">

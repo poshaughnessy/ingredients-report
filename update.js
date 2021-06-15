@@ -121,11 +121,10 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
     totalDeprecatedComponentsWithTeam,
   );
 
-  // Priority components by team - TODO CHECK THIS DOES NOT LOOK RIGHT?
+  // Priority components by team
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
     filesWithPriorityDeprecated[componentKey].forEach((fileWithPriorityDeprecated) => {
       const teamName = findTeamFromFilepath(fileWithPriorityDeprecated);
-      console.log('>>>>> Found team from path', teamName, fileWithPriorityDeprecated);
       if (teamName) {
         addFileWithPriorityDeprecatedByTeam(
           teamName,

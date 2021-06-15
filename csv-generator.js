@@ -6,11 +6,6 @@ const PRIORITY_DEPRECATED_CSV_FILEPATH = './output/priority-deprecated-by-team.c
 export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndComponentPath) => {
   let csvData = [];
 
-  console.log(
-    'deprecatedComponentsByTeamAndComponentPath',
-    deprecatedComponentsByTeamAndComponentPath,
-  );
-
   Object.keys(deprecatedComponentsByTeamAndComponentPath).forEach((teamName) => {
     Object.keys(deprecatedComponentsByTeamAndComponentPath[teamName]).forEach((componentPath) => {
       deprecatedComponentsByTeamAndComponentPath[teamName][componentPath].forEach((filepath) => {
@@ -32,11 +27,6 @@ export const generatePriorityDeprecatedCsv = async (
   priorityDeprecatedComponentsByTeamAndComponent,
 ) => {
   let csvData = [];
-
-  console.log(
-    'priorityDeprecatedComponentsByTeamAndComponent',
-    priorityDeprecatedComponentsByTeamAndComponent,
-  );
 
   Object.keys(priorityDeprecatedComponentsByTeamAndComponent).forEach((teamName) => {
     Object.keys(priorityDeprecatedComponentsByTeamAndComponent[teamName]).forEach(

@@ -100,7 +100,9 @@ export const componentPathsByTeam = {
   slots: ['components/BookSlot'],
 };
 
-// Exact matches rather than checking just included in path
+/**
+ * These ones are for exact matches rather than checking just included in path
+ */
 export const priorityDeprecatedComponentPaths = {
   ADD_LIST: ['components/Lists/CreateList/Button'],
   ALERT: ['components/wdx/Alert'],
