@@ -151,7 +151,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   updatePriorityDeprecatedMissingTeamFilesAndCounts(
     filesWithPriorityDeprecatedMissingTeam,
-    totalDeprecatedByTeam,
+    totalPriorityDeprecatedByTeam,
   );
 
   console.log(
