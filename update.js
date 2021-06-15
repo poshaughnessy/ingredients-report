@@ -105,6 +105,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
       if (teamName) {
         addFileWithDeprecatedByTeam(
           teamName,
+          fileWithDeprecated,
           deprecatedComponentsByTeam,
           totalDeprecatedComponentsWithTeam,
         );
@@ -129,6 +130,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
         addFileWithPriorityDeprecatedByTeam(
           teamName,
           componentKey,
+          fileWithPriorityDeprecated,
           priorityDeprecatedComponentsByTeam,
           totalPriorityDeprecatedByTeam,
         );
