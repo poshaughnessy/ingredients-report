@@ -109,8 +109,8 @@ export const findTeamFromFilepath = (filepath) => {
     for (const path of componentPathsByTeam[teamName]) {
       if (filepath.includes(path)) return teamName;
     }
-    return null;
   }
+  return null;
 };
 
 export const getDeprecatedComponentPaths = (log = true) => {
