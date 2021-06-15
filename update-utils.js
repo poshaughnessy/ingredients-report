@@ -259,10 +259,12 @@ export const updatePriorityDeprecatedMissingTeamFilesAndCounts = (
   if (log) logPriorityDeprecatedMissingTeamFilesAndCounts(filesWithPriorityDeprecatedMissingTeam);
 
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
-    updateStat(
-      `crossCuttingNumDeprecatedFiles${componentKey}`,
-      filesWithPriorityDeprecatedMissingTeam[componentKey].length -
-        totalPriorityDeprecatedByTeam[componentKey],
-    );
+    if (filesWithPriorityDeprecatedMissingTeam[componentKey]) {
+      updateStat(
+        `crossCuttingNumDeprecatedFiles${componentKey}`,
+        filesWithPriorityDeprecatedMissingTeam[componentKey].length -
+          totalPriorityDeprecatedByTeam[componentKey],
+      );
+    }
   }
 };
