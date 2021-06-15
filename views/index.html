@@ -188,6 +188,20 @@
           </div>
         </div>
 
+        <h3>Recipes</h3>
+        <div class="numbers">
+          <div class="down-is-good">
+            <h3>{{stats.recipesNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
+            <p>Files with deprecated components</p>
+            <stat-comparison v-bind:comparison="stats.recipesNumDeprecatedComponentFiles.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good" v-for="component in priorityComponentsForTeam('recipes')">
+            <h3>{{stats[`recipesNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('recipes', component.key)"></stat-comparison>
+          </div>
+        </div>
+
         <h3>Slots &amp; Routing</h3>
         <div class="numbers">
           <div class="down-is-good">

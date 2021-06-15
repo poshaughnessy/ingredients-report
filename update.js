@@ -7,6 +7,7 @@ import { generateDeprecatedCsv, generatePriorityDeprecatedCsv } from './csv-gene
 import {
   addFileWithDeprecated,
   addFileWithDeprecatedByTeam,
+  addFileWithDeprecatedMissingTeam,
   addFileWithPriorityDeprecated,
   addFileWithPriorityDeprecatedByTeam,
   addFileWithPriorityDeprecatedMissingTeam,
@@ -31,6 +32,7 @@ let filesWithPriorityDeprecatedMissingTeam = {};
 let filesWithDeprecated = [];
 let filesWithDeprecatedByComponent = {};
 let filesWithDeprecatedMissingTeam = [];
+let filesWithDeprecatedMissingTeamByComponentPath = {};
 let filesWithPriorityDeprecated = {};
 let numDeprecatedInstances = 0;
 let numIngredientsComponents = 0;
@@ -106,7 +108,12 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
           deprecatedComponentsByTeamAndComponentPath,
         );
       } else {
-        filesWithDeprecatedMissingTeam.push(fileWithDeprecated);
+        addFileWithDeprecatedMissingTeam(
+          componentPath,
+          fileWithDeprecated,
+          filesWithDeprecatedMissingTeamByComponentPath,
+          filesWithDeprecatedMissingTeam,
+        );
       }
     });
   });
@@ -152,8 +159,15 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   updateStat('techDebtPerDesignSystemComponent', numDeprecatedInstances / numIngredientsComponents);
 
   // Write CSVs with file path info (temporary - next step to include in dashboard)
-  generateDeprecatedCsv(deprecatedComponentsByTeamAndComponentPath);
-  generatePriorityDeprecatedCsv(priorityDeprecatedComponentsByTeamAndComponent);
+  generateDeprecatedCsv(
+    deprecatedComponentsByTeamAndComponentPath,
+    filesWithDeprecatedMissingTeamByComponentPath,
+  );
+
+  generatePriorityDeprecatedCsv(
+    priorityDeprecatedComponentsByTeamAndComponent,
+    filesWithPriorityDeprecatedMissingTeam,
+  );
 });
 
 console.log('Finished');

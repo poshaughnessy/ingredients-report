@@ -3,7 +3,10 @@ import objectsToCsv from 'objects-to-csv';
 const DEPRECATED_CSV_FILEPATH = './output/deprecated-by-team.csv';
 const PRIORITY_DEPRECATED_CSV_FILEPATH = './output/priority-deprecated-by-team.csv';
 
-export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndComponentPath) => {
+export const generateDeprecatedCsv = async (
+  deprecatedComponentsByTeamAndComponentPath,
+  filesWithDeprecatedMissingTeamByComponentPath,
+) => {
   let csvData = [];
 
   Object.keys(deprecatedComponentsByTeamAndComponentPath).forEach((teamName) => {
@@ -18,6 +21,16 @@ export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndCompone
     });
   });
 
+  Object.keys(filesWithDeprecatedMissingTeamByComponentPath).forEach((componentPath) => {
+    filesWithDeprecatedMissingTeamByComponentPath[componentPath].forEach((filepath) => {
+      csvData.push({
+        Team: 'crossCutting',
+        'Deprecated component': componentPath,
+        'Found in filepath': filepath,
+      });
+    });
+  });
+
   const csv = new objectsToCsv(csvData);
   await csv.toDisk(DEPRECATED_CSV_FILEPATH);
   console.log('\nWritten CSV', DEPRECATED_CSV_FILEPATH);
@@ -25,6 +38,7 @@ export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndCompone
 
 export const generatePriorityDeprecatedCsv = async (
   priorityDeprecatedComponentsByTeamAndComponent,
+  filesWithPriorityDeprecatedMissingTeam,
 ) => {
   let csvData = [];
 
@@ -42,6 +56,16 @@ export const generatePriorityDeprecatedCsv = async (
         );
       },
     );
+  });
+
+  Object.keys(filesWithPriorityDeprecatedMissingTeam).forEach((componentKey) => {
+    filesWithPriorityDeprecatedMissingTeam[componentKey].forEach((filepath) => {
+      csvData.push({
+        Team: 'crossCutting',
+        'Priority component': componentKey,
+        'Found in filepath': filepath,
+      });
+    });
   });
 
   const csv = new objectsToCsv(csvData);
