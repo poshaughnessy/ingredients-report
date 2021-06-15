@@ -57,7 +57,7 @@ getMostRecentStats()
           customerServiceAndComms: 'Customer Service & Comms',
           identity: 'Identity',
           loyalty: 'Loyalty',
-          // recipes: 'Recipes',
+          recipes: 'Recipes',
           slots: 'Slots',
           crossCutting: 'Cross-cutting',
         };

@@ -35,8 +35,6 @@ let numDeprecatedInstances = 0;
 let numIngredientsComponents = 0;
 let numPriorityDeprecatedInstances = {};
 let priorityDeprecatedComponentsByTeamAndComponent = {};
-let totalPriorityDeprecatedByTeam = {};
-let totalDeprecatedComponentsWithTeam = 0;
 
 initDatabase();
 
@@ -98,7 +96,6 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   Object.keys(filesWithDeprecatedByComponent).forEach((componentPath) => {
     filesWithDeprecatedByComponent[componentPath].forEach((fileWithDeprecated) => {
       const teamName = findTeamFromFilepath(fileWithDeprecated);
-      console.log('>>>>> Found team from path', teamName, fileWithDeprecated);
       if (teamName) {
         addFileWithDeprecatedByTeam(
           teamName,
@@ -106,7 +103,6 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
           fileWithDeprecated,
           deprecatedComponentsByTeam,
           deprecatedComponentsByTeamAndComponentPath,
-          totalDeprecatedComponentsWithTeam,
         );
       } else {
         filesWithDeprecatedMissingTeam.push(fileWithDeprecated);
@@ -116,10 +112,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   updateDeprecatedByTeamFilesAndCounts(deprecatedComponentsByTeam);
 
-  updateDeprecatedMissingTeamFilesAndCounts(
-    filesWithDeprecatedMissingTeam,
-    totalDeprecatedComponentsWithTeam,
-  );
+  updateDeprecatedMissingTeamFilesAndCounts(filesWithDeprecatedMissingTeam);
 
   // Priority components by team
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
@@ -131,7 +124,6 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
           componentKey,
           fileWithPriorityDeprecated,
           priorityDeprecatedComponentsByTeamAndComponent,
-          totalPriorityDeprecatedByTeam,
         );
       } else {
         addFileWithPriorityDeprecatedMissingTeam(
@@ -148,10 +140,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
     numPriorityDeprecatedInstances,
   );
 
-  updatePriorityDeprecatedMissingTeamFilesAndCounts(
-    filesWithPriorityDeprecatedMissingTeam,
-    totalPriorityDeprecatedByTeam,
-  );
+  updatePriorityDeprecatedMissingTeamFilesAndCounts(filesWithPriorityDeprecatedMissingTeam);
 
   console.log(
     'Tech debt per design system component',

@@ -97,6 +97,7 @@ export const componentPathsByTeam = {
     'components/PromoCode',
     'components/PromoItem',
   ],
+  recipes: ['components/Recipes'],
   slots: ['components/BookSlot'],
 };
 
