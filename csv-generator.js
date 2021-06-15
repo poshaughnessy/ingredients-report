@@ -5,9 +5,15 @@ const PRIORITY_DEPRECATED_CSV_FILEPATH = './output/priority-deprecated-by-team.c
 
 export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndComponentPath) => {
   let csvData = [];
-  Object.keys(deprecatedComponentsByTeamAndComponentPath).forEach((componentPath) => {
-    Object.keys(deprecatedComponentsByTeamAndComponentPath[componentPath]).forEach((teamName) => {
-      deprecatedComponentsByTeamAndComponentPath[componentPath][teamName].forEach((filepath) => {
+
+  console.log(
+    'deprecatedComponentsByTeamAndComponentPath',
+    deprecatedComponentsByTeamAndComponentPath,
+  );
+
+  Object.keys(deprecatedComponentsByTeamAndComponentPath).forEach((teamName) => {
+    Object.keys(deprecatedComponentsByTeamAndComponentPath[teamName]).forEach((componentPath) => {
+      deprecatedComponentsByTeamAndComponentPath[teamName][componentPath].forEach((filepath) => {
         csvData.push({
           Team: teamName,
           'Deprecated component': componentPath,
@@ -22,18 +28,30 @@ export const generateDeprecatedCsv = async (deprecatedComponentsByTeamAndCompone
   console.log('\nWritten CSV', DEPRECATED_CSV_FILEPATH);
 };
 
-export const generatePriorityDeprecatedCsv = async (priorityDeprecatedComponentsByTeam) => {
+export const generatePriorityDeprecatedCsv = async (
+  priorityDeprecatedComponentsByTeamAndComponent,
+) => {
   let csvData = [];
-  Object.keys(priorityDeprecatedComponentsByTeam).forEach((componentKey) => {
-    Object.keys(priorityDeprecatedComponentsByTeam[componentKey]).forEach((teamName) => {
-      priorityDeprecatedComponentsByTeam[componentKey][teamName].forEach((filepath) => {
-        csvData.push({
-          Team: teamName,
-          'Priority component': componentKey,
-          'Found in filepath': filepath,
-        });
-      });
-    });
+
+  console.log(
+    'priorityDeprecatedComponentsByTeamAndComponent',
+    priorityDeprecatedComponentsByTeamAndComponent,
+  );
+
+  Object.keys(priorityDeprecatedComponentsByTeamAndComponent).forEach((teamName) => {
+    Object.keys(priorityDeprecatedComponentsByTeamAndComponent[teamName]).forEach(
+      (componentKey) => {
+        priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].forEach(
+          (filepath) => {
+            csvData.push({
+              Team: teamName,
+              'Priority component': componentKey,
+              'Found in filepath': filepath,
+            });
+          },
+        );
+      },
+    );
   });
 
   const csv = new objectsToCsv(csvData);

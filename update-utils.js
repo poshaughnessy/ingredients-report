@@ -62,18 +62,20 @@ export const addFileWithDeprecatedByTeam = (
 
 export const addFileWithPriorityDeprecatedByTeam = (
   teamName,
-  componentPath,
+  componentKey,
   fileWithPriorityDeprecated,
-  priorityDeprecatedComponentsByTeam,
+  priorityDeprecatedComponentsByTeamAndComponent,
   totalPriorityDeprecatedByTeam,
 ) => {
-  if (!priorityDeprecatedComponentsByTeam[componentPath]) {
-    priorityDeprecatedComponentsByTeam[componentPath] = {};
+  if (!priorityDeprecatedComponentsByTeamAndComponent[teamName]) {
+    priorityDeprecatedComponentsByTeamAndComponent[teamName] = {};
   }
-  if (!priorityDeprecatedComponentsByTeam[componentPath][teamName]) {
-    priorityDeprecatedComponentsByTeam[componentPath][teamName] = [];
+  if (!priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey]) {
+    priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey] = [];
   }
-  priorityDeprecatedComponentsByTeam[componentPath][teamName].push(fileWithPriorityDeprecated);
+  priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].push(
+    fileWithPriorityDeprecated,
+  );
   totalPriorityDeprecatedByTeam[teamName]++;
 };
 

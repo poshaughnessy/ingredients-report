@@ -34,7 +34,7 @@ let filesWithPriorityDeprecated = {};
 let numDeprecatedInstances = 0;
 let numIngredientsComponents = 0;
 let numPriorityDeprecatedInstances = {};
-let priorityDeprecatedComponentsByTeam = {};
+let priorityDeprecatedComponentsByTeamAndComponent = {};
 let totalPriorityDeprecatedByTeam = {};
 let totalDeprecatedComponentsWithTeam = 0;
 
@@ -103,6 +103,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   Object.keys(filesWithDeprecatedByComponent).forEach((componentPath) => {
     filesWithDeprecatedByComponent[componentPath].forEach((fileWithDeprecated) => {
       const teamName = findTeamFromFilepath(fileWithDeprecated);
+      console.log('>>>>> Found team from path', teamName, fileWithDeprecated);
       if (teamName) {
         addFileWithDeprecatedByTeam(
           teamName,
@@ -129,12 +130,13 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
     filesWithPriorityDeprecated[componentKey].forEach((fileWithPriorityDeprecated) => {
       const teamName = findTeamFromFilepath(fileWithPriorityDeprecated);
+      console.log('>>>>> Found team from path', teamName, fileWithPriorityDeprecated);
       if (teamName) {
         addFileWithPriorityDeprecatedByTeam(
           teamName,
           componentKey,
           fileWithPriorityDeprecated,
-          priorityDeprecatedComponentsByTeam,
+          priorityDeprecatedComponentsByTeamAndComponent,
           totalPriorityDeprecatedByTeam,
         );
       } else {
@@ -165,7 +167,7 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
 
   // Write CSVs with file path info (temporary - next step to include in dashboard)
   generateDeprecatedCsv(deprecatedComponentsByTeamAndComponentPath);
-  generatePriorityDeprecatedCsv(priorityDeprecatedComponentsByTeam);
+  generatePriorityDeprecatedCsv(priorityDeprecatedComponentsByTeamAndComponent);
 });
 
 console.log('Finished');
