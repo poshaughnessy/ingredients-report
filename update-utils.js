@@ -75,15 +75,17 @@ export const addFileWithPriorityDeprecatedMissingTeam = (
 };
 
 export const countStoriesExports = (files) => {
+  let count = 0;
   files.forEach((file) => {
     const linerStory = new lineByLine(file);
     let lineStory;
     while ((lineStory = linerStory.next())) {
       if (lineStory.toString().match('export const')) {
-        numStoriesExports++;
+        count++;
       }
     }
   });
+  return count;
 };
 
 export const findTeamFromFilepath = (filepath) => {
