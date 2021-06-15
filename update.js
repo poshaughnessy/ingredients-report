@@ -49,7 +49,7 @@ glob(`../wtr-ingredients/src/ingredients/**/*.stories.js`, (err, files) => {
 
 // Waitrose.com tech debt
 // Search for imports of the deprecated components in src code
-glob(`../wtr-website/src/**/*.js`, async (err, files) => {
+glob(`../wtr-website/src/**/*.js`, (err, files) => {
   files.forEach((file) => {
     if (isPathExcluded(file)) {
       return;
