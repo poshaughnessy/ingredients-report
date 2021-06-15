@@ -48,6 +48,13 @@ getMostRecentStats()
           data.error = true;
         }
 
+        data.priorityComponents = {
+          ANCHOR_LINK: 'Anchor links',
+          BUTTON: 'Buttons',
+          ICONS: 'Icons',
+          TYPOGRAPHY: 'Typography',
+        };
+
         data.teams = {
           account: 'Account',
           browse: 'Browse',
@@ -64,6 +71,14 @@ getMostRecentStats()
 
         data.comparisonByTeamAndComponent = (team, component) => {
           return data.stats[`${team}NumDeprecatedFiles${component}`].comparison;
+        };
+
+        data.deprecatedOrToBeDeprecated = (component) => {
+          return component === 'ANCHOR_LINK' ? 'to-be-deprecated' : 'deprecated';
+        };
+
+        data.lowercase = (string) => {
+          return string && string.toLowerCase ? string.toLowerCase() : string;
         };
 
         new Vue({
