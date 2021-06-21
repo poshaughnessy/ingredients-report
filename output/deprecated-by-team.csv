@@ -87,13 +87,13 @@ account,components/wdx/Modal,/src/components/MyDetails/ChangePasswordModal/Chang
 account,components/wdx/Spinner,/src/components/Address/AddAddressModal/index.js
 account,components/wdx/Alert,/src/components/Address/AddressBook/AddressBook.js
 account,components/wdx/Alert,/src/components/Address/common/ChooseAddressModal/AddressBookView/index.js
-account,components/wdx/Text,/src/components/Address/AddressFormUpdated/AddressName/StaticAddressName.js
+account,components/wdx/Text,/src/components/Address/AddressForm/AddressName/StaticAddressName.js
+account,components/wdx/Text,/src/components/Address/common/AddressTile/AddressTile.js
 account,components/wdx/FormattedModal,/src/components/Address/common/CannotAlterAddressModal/CannotAlterAddressModal.js
 account,components/wdx/Iconography,/src/components/Address/common/ChooseAddressModal/AddAddressView/index.js
 account,components/wdx/Iconography,/src/components/MarketingPreferences/index.js
 account,components/wdx/Iconography,/src/components/MyAccount/MyMembership.js
 account,components/wdx/Iconography,/src/components/SeachNavigateBack/SeachNavigateBack.js
-account,components/wdx/Iconography,/src/ingredients/AddressTile/index.js
 account,components/wdx/buttons/EditButton,/src/components/MyDetails/AccountDetails/AccountDetails.js
 loyalty,components/wdx/Card,/src/components/PromoCodes/index.js
 loyalty,components/Modal,/src/components/PromoCode/NonQualifiedPromoCodeExplanationModal/index.js
@@ -128,6 +128,7 @@ loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/MyWaitr
 loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/RedeemingRewardModal/index.js
 loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Reward/Reward.js
 loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Rewards.js
+loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/TermsAndConditions/index.js
 loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Voucher/Voucher.js
 loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Vouchers.js
 loyalty,components/wdx/Text,/src/components/OrderReplacementCardAddress/OrderReplacementCardAddress.js
@@ -197,7 +198,6 @@ crossCutting,components/Modal,/src/components/Modal/Buttons/Buttons.js
 crossCutting,components/Modal,/src/components/Modal/CommonModal/index.js
 crossCutting,components/Modal,/src/components/Modal/CommonModal/ModalSelector.js
 crossCutting,components/Modal,/src/components/Modal/index.js
-crossCutting,components/Modal,/src/components/Modal/Modal.stories.js
 crossCutting,components/Modal,/src/components/Modal/PersonalisedMessageModal/PersonalisedMessageModal.js
 crossCutting,components/Modal,/src/components/Modal/ProductsModal/index.js
 crossCutting,components/Modal,/src/components/Modal/ShopperNotesModal/ShopperNotesModal.js

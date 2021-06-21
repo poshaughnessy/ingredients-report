@@ -153,7 +153,9 @@ export const logDeprecatedFilesAndCounts = (filesWithDeprecated, numDeprecatedIn
 };
 
 export const logDeprecatedComponentsByTeam = (deprecatedComponentsByTeam, teamName) => {
-  console.log(`\n${teamName} team components using deprecated components:\n`);
+  console.log(
+    `\n${teamName} team components using deprecated components (${deprecatedComponentsByTeam[teamName].length}):\n`,
+  );
   deprecatedComponentsByTeam[teamName].forEach((file) => console.log(file));
 };
 

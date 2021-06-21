@@ -78,7 +78,7 @@
 
         <h3>Browse</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.browseNumDeprecatedComponentFiles">
             <h3>{{stats.browseNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.browseNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -92,7 +92,7 @@
 
         <h3>Buy Checkout</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.buyCheckoutNumDeprecatedComponentFiles">
             <h3>{{stats.buyCheckoutNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.buyCheckoutNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -106,7 +106,7 @@
 
         <h3>Buy Trolley</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.buyTrolleyNumDeprecatedComponentFiles">
             <h3>{{stats.buyTrolleyNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.buyTrolleyNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -120,7 +120,7 @@
 
         <h3>Content (AEM CI)</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.contentNumDeprecatedComponentFiles">
             <h3>{{stats.contentNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.contentNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -134,7 +134,7 @@
 
         <h3>Customer - Account</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.accountNumDeprecatedComponentFiles">
             <h3>{{stats.accountNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.accountNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -148,7 +148,7 @@
 
         <h3>Customer - Identity</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.identityNumDeprecatedComponentFiles">
             <h3>{{stats.identityNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.identityNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -162,7 +162,7 @@
 
         <h3>Customer Service &amp; Comms</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.customerServiceAndCommsNumDeprecatedComponentFiles">
             <h3>{{stats.customerServiceAndCommsNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.customerServiceAndCommsNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -176,7 +176,7 @@
 
         <h3>Loyalty &amp; Rewards</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.loyaltyNumDeprecatedComponentFiles">
             <h3>{{stats.loyaltyNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.loyaltyNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -190,7 +190,7 @@
 
         <h3>Recipes</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.recipesNumDeprecatedComponentFiles">
             <h3>{{stats.recipesNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.recipesNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -204,7 +204,7 @@
 
         <h3>Slots &amp; Routing</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.slotsNumDeprecatedComponentFiles">
             <h3>{{stats.slotsNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.slotsNumDeprecatedComponentFiles.comparison"></stat-comparison>
@@ -218,7 +218,7 @@
 
         <h3>Cross-cutting (missing team assignment)</h3>
         <div class="numbers">
-          <div class="down-is-good">
+          <div class="down-is-good" v-if="stats.crossCuttingNumDeprecatedComponentFiles">
             <h3>{{stats.crossCuttingNumDeprecatedComponentFiles.mostRecent.formatted}}</h3>
             <p>Files with deprecated components</p>
             <stat-comparison v-bind:comparison="stats.crossCuttingNumDeprecatedComponentFiles.comparison"></stat-comparison>

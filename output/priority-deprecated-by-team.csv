@@ -10,10 +10,9 @@ account,ICONS,/src/components/MarketingPreferences/index.js
 account,ICONS,/src/components/MyAccount/List.js
 account,ICONS,/src/components/MyAccount/MyMembership.js
 account,ICONS,/src/components/SeachNavigateBack/SeachNavigateBack.js
-account,ICONS,/src/ingredients/AddressTile/index.js
-account,TYPOGRAPHY,/src/components/Address/AddressFormUpdated/AddressName/StaticAddressName.js
+account,TYPOGRAPHY,/src/components/Address/AddressForm/AddressName/StaticAddressName.js
+account,TYPOGRAPHY,/src/components/Address/common/AddressTile/AddressTile.js
 account,TYPOGRAPHY,/src/components/SeachNavigateBack/SeachNavigateBack.js
-account,TYPOGRAPHY,/src/ingredients/AddressTile/index.js
 identity,ANCHOR_LINK,/src/components/AuthenticationAction/SignIn/SignIn.js
 identity,ANCHOR_LINK,/src/components/ForgotPassword/Form.js
 identity,ANCHOR_LINK,/src/components/ForgotPassword/Success.js
@@ -185,6 +184,7 @@ loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/MyWaitroseReward
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/RedeemingRewardModal/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Reward/Reward.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Rewards.js
+loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/TermsAndConditions/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Voucher/Voucher.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Vouchers.js
 loyalty,TYPOGRAPHY,/src/components/OrderReplacementCardAddress/OrderReplacementCardAddress.js
