@@ -11,9 +11,11 @@ export const addFileWithDeprecated = (
 ) => {
   if (!filesWithDeprecated.includes(filepath)) {
     filesWithDeprecated.push(filepath);
-    if (!filesWithDeprecatedByComponent[componentPath]) {
-      filesWithDeprecatedByComponent[componentPath] = [];
-    }
+  }
+  if (!filesWithDeprecatedByComponent[componentPath]) {
+    filesWithDeprecatedByComponent[componentPath] = [];
+  }
+  if (!filesWithDeprecatedByComponent[componentPath].includes(filepath)) {
     filesWithDeprecatedByComponent[componentPath].push(filepath);
   }
 };
@@ -46,7 +48,9 @@ export const addFileWithDeprecatedByTeam = (
   if (!deprecatedComponentsByTeam[teamName]) {
     deprecatedComponentsByTeam[teamName] = [];
   }
-  deprecatedComponentsByTeam[teamName].push(fileWithDeprecated);
+  if (!deprecatedComponentsByTeam[teamName].includes(fileWithDeprecated)) {
+    deprecatedComponentsByTeam[teamName].push(fileWithDeprecated);
+  }
 
   // Also store with the componentPath to be able to output that too
   if (!deprecatedComponentsByTeamAndComponentPath[teamName]) {
