@@ -46,7 +46,7 @@ browse,ANCHOR_LINK,/src/components/ShoppingLists/Card/Title/index.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/BookSlotButton/BookSlotButton.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/LinksBar/index.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/LinksBar/MyAccount/MyAccount.js
-browse,ANCHOR_LINK,/src/components/SiteHeader/MobileHeader/MobileHeader.js
+browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeader.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeaderLinks/index.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeaderLinks/MyAccountMenu/MyAccountMenu.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeaderMinimal.js
@@ -77,7 +77,6 @@ browse,ICONS,/src/components/SearchError/SearchError.js
 browse,ICONS,/src/components/SearchResult/SearchResult.js
 browse,ICONS,/src/components/SiteHeader/BookSlotButton/BookSlotButton.js
 browse,ICONS,/src/components/SiteHeader/LinksBar/DropDownNav/DropDownNav.js
-browse,ICONS,/src/components/SiteHeader/LinksBar/index.js
 browse,ICONS,/src/components/SiteHeader/LinksBar/MyAccount/MyAccount.js
 browse,ICONS,/src/components/SiteHeader/ShoppingSummary/TrolleyInformation/TrolleyInformation.js
 browse,ICONS,/src/components/SiteHeader/SiteHeaderBrowse/SiteHeaderBrowse.js
@@ -87,7 +86,6 @@ browse,ICONS,/src/components/SiteHeader/SiteHeaderMinimal.js
 browse,ICONS,/src/components/SiteHeader/SlideOutNav/MenuLink/MenuLink.js
 browse,ICONS,/src/components/SiteHeader/SlideOutNav/SlideOutNav.js
 browse,TYPOGRAPHY,/src/components/Lists/EmptyList/index.js
-browse,TYPOGRAPHY,/src/components/ProductGrid/Group/Title/index.js
 browse,TYPOGRAPHY,/src/components/SearchResult/SearchResult.js
 buyCheckout,ANCHOR_LINK,/src/components/CheckoutTotals/index.js
 buyCheckout,ANCHOR_LINK,/src/components/OrderConfirmation/OrderConfirmation.js
@@ -124,15 +122,15 @@ content,ANCHOR_LINK,/src/components/CmsPage/partials/ServiceSelector.js
 content,ANCHOR_LINK,/src/components/CompetitionsForms/Sections/MyWaitrose/index.js
 content,ANCHOR_LINK,/src/components/CompetitionsForms/Sections/Receipt/index.js
 content,ANCHOR_LINK,/src/components/FullWidthNavigation/index.js
+content,ANCHOR_LINK,/src/components/HeroBanner/TradingComponent/index.js
 content,ANCHOR_LINK,/src/components/TradingCell/PromoLink/index.js
-content,ANCHOR_LINK,/src/components/TradingComponent/Wrapper/index.js
 content,ANCHOR_LINK,/src/components/WhyWaitrose/Panel/index.js
 content,BUTTON,/src/components/FullWidthNavigation/index.js
-content,BUTTON,/src/components/TradingComponent/Button/index.js
+content,BUTTON,/src/components/HeroBanner/Button/index.js
 content,BUTTON,/src/components/WhyWaitrose/Panel/index.js
 content,ICONS,/src/components/Accordion/Accordion.js
 content,ICONS,/src/components/CmsPage/partials/ServiceSelector.js
-content,ICONS,/src/components/TradingComponent/Button/index.js
+content,ICONS,/src/components/HeroBanner/Button/index.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/CompetitionsForm.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/Address/index.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/Closed/index.js
@@ -178,13 +176,11 @@ loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseCardAndDetails/MyWaitros
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseCardAndDetails/NonMyWaitroseMemberView/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseHubHomepage/MyWaitroseHubHomepage.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/CannotRedeemRewardsWarning/index.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/FAQs/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/HowMyRewardsWorks/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/MyWaitroseRewards.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/RedeemingRewardModal/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Reward/Reward.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Rewards.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/TermsAndConditions/index.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Voucher/Voucher.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Vouchers.js
 loyalty,TYPOGRAPHY,/src/components/OrderReplacementCardAddress/OrderReplacementCardAddress.js
@@ -193,7 +189,6 @@ customerServiceAndComms,ICONS,/src/components/ContactUsCard/ContactUsCard.js
 customerServiceAndComms,ICONS,/src/components/ContactUsCard/FirstRowOpeningTimes/FirstRowOpeningTimes.js
 customerServiceAndComms,ICONS,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 customerServiceAndComms,ICONS,/src/components/Forms/utilities/SearchSelect/index.js
-buyTrolley,ICONS,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
 crossCutting,ANCHOR_LINK,/src/components/CarouselSlide/CarouselSlide.js
@@ -206,7 +201,6 @@ crossCutting,ANCHOR_LINK,/src/components/NextOrder/NextOrder.js
 crossCutting,ANCHOR_LINK,/src/components/PleaseLogIn/index.js
 crossCutting,ANCHOR_LINK,/src/components/PromoText/PromoText.js
 crossCutting,ANCHOR_LINK,/src/components/ShopFromRecentOrder/ShopFromRecentOrder.js
-crossCutting,ANCHOR_LINK,/src/components/ShopWindows/ShopWindow/index.js
 crossCutting,ANCHOR_LINK,/src/components/StartShopping/index.js
 crossCutting,ANCHOR_LINK,/src/components/VisualNavigation/index.js
 crossCutting,BUTTON,/src/components/AnchorLink/index.js

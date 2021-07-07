@@ -67,6 +67,7 @@ export const componentPathsByTeam = {
     'components/Accordion',
     'components/CmsPage',
     'components/CompetitionsForms',
+    'components/HeroBanner',
     'components/FullWidthNavigation',
     'components/ProductPicker',
     'components/RichText',
@@ -120,21 +121,4 @@ export const priorityDeprecatedComponentPaths = {
   ],
   ICONS: ['components/wdx/Iconography'],
   TYPOGRAPHY: ['components/wdx/Text'],
-  // ADD_LIST: ['components/Lists/CreateList/Button'],
-  // ALERT: ['components/wdx/Alert'],
-  // ADDRESS_TILE: [
-  //   'ingredients/AddressTile/', // NOTE trailing slash - but there is only one reference
-  // ],
-  // CARD: ['components/wdx/Card'],
-  // MODAL: [
-  //   'components/Modal',
-  //   'components/Modal/CommonModal',
-  //   'components/PortalModal',
-  //   'components/wdx/FormattedModal',
-  // ],
-  // TEXT_INPUT: [
-  //   'components/Form/TextInput',
-  //   'components/Forms/FormFields/InputText',
-  //   'components/Forms/ReduxFormFields/InputText',
-  // ],
 };

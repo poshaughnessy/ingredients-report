@@ -45,9 +45,10 @@ export function getAllStats() {
 
 export function getMostRecentStats() {
   return new Promise((resolve, reject) => {
+    // Get all stats with timestamp within 1 day of the most recent one
     db.all(
       `SELECT * from ${dbTable} sv1 WHERE
-      timestamp = (SELECT MAX(timestamp) FROM ${dbTable} sv2 WHERE sv1.key = sv2.key)`,
+      timestamp > date((SELECT MAX(timestamp) FROM ${dbTable} sv2), '-1 day')`,
       function (err, rows) {
         if (err) {
           console.error('Error getting most recent stats', err);
@@ -77,7 +78,7 @@ export function getComparisonStats() {
   });
 }
 
-export function updateStat(statKey, statValue) {
+export function updateStat(statKey, statValues) {
   return new Promise(function (resolve, reject) {
     db.serialize(function () {
       const insertStmt = db.prepare(
