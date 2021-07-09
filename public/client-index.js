@@ -55,11 +55,30 @@ getMostRecentStats()
           TYPOGRAPHY: 'Typography',
         };
 
+        data.priorityComponentsHTMLELements = {
+          ANCHOR_LINK: 'Links',
+          BUTTON: 'Buttons',
+          TYPOGRAPHY: 'Typography',
+        };
+
         data.priorityComponentsForTeam = (team) => {
           const components = [];
           Object.keys(data.priorityComponents).forEach((component) => {
             if (data.stats[`${team}NumDeprecatedFiles${component}`]) {
               components.push({ key: component, name: data.priorityComponents[component] });
+            }
+          });
+          return components;
+        };
+
+        data.priorityComponentsForTeamHTMLElements = (team) => {
+          const components = [];
+          Object.keys(data.priorityComponentsHTMLELements).forEach((component) => {
+            if (data.stats[`${team}NumDeprecatedHTMLElementFiles${component}`]) {
+              components.push({
+                key: component,
+                name: data.priorityComponentsHTMLELements[component],
+              });
             }
           });
           return components;
@@ -81,6 +100,10 @@ getMostRecentStats()
 
         data.comparisonByTeamAndComponent = (team, component) => {
           return data.stats[`${team}NumDeprecatedFiles${component}`].comparison;
+        };
+
+        data.comparisonByTeamAndComponentHTMLElements = (team, component) => {
+          return data.stats[`${team}NumDeprecatedHTMLELementFiles${component}`]?.comparison;
         };
 
         data.deprecatedOrToBeDeprecated = (component) => {

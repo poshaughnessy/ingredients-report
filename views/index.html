@@ -18,7 +18,7 @@
 	<body>
 		<main id="general-stats" v-cloak>
       <h1>Ingredients Report <span class="last-updated">Last updated: <span class="last-updated-time">{{lastUpdatedTime}}</span></h1>
-      <div>
+      <div class="contents">
 
         <h2>Overview</h2>
         <div class="numbers">
@@ -54,23 +54,41 @@
         <div class="numbers">
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesANCHOR_LINK.mostRecent.formatted}}</h3>
-            <p>Links - files with to-be-deprecated links</p>
+            <p>Links - files with to-be-deprecated link components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedFilesANCHOR_LINK.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesBUTTON.mostRecent.formatted}}</h3>
-            <p>Buttons - files with deprecated buttons</p>
+            <p>Buttons - files with deprecated button components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedFilesBUTTON.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesICONS.mostRecent.formatted}}</h3>
-            <p>Icons - files with deprecated icons</p>
+            <p>Icons - files with deprecated icon components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedFilesICONS.comparison"></stat-comparison>
           </div>
           <div class="down-is-good">
             <h3>{{stats.numDeprecatedFilesTYPOGRAPHY.mostRecent.formatted}}</h3>
-            <p>Typography - files with deprecated typography</p>
+            <p>Typography - files with deprecated typography components</p>
             <stat-comparison v-bind:comparison="stats.numDeprecatedFilesTYPOGRAPHY.comparison"></stat-comparison>
+          </div>
+        </div>
+
+        <div class="numbers">
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedHTMLElementFilesANCHOR_LINK.mostRecent.formatted}}</h3>
+            <p>Links - files with raw &lt;a&gt; HTML elements</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedHTMLElementFilesANCHOR_LINK.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedHTMLElementFilesBUTTON.mostRecent.formatted}}</h3>
+            <p>Buttons - files with raw &lt;button&gt; HTML elements</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedHTMLElementFilesBUTTON.comparison"></stat-comparison>
+          </div>
+          <div class="down-is-good">
+            <h3>{{stats.numDeprecatedHTMLElementFilesTYPOGRAPHY.mostRecent.formatted}}</h3>
+            <p>Typography - files with raw typography HTML elements</p>
+            <stat-comparison v-bind:comparison="stats.numDeprecatedHTMLElementFilesTYPOGRAPHY.comparison"></stat-comparison>
           </div>
         </div>
 
@@ -89,6 +107,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('browse', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('browse')">
+            <h3>{{stats[`browseNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('browse', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Buy Checkout</h3>
         <div class="numbers">
@@ -101,6 +126,13 @@
             <h3>{{stats[`buyCheckoutNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
             <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('buyCheckout', component.key)"></stat-comparison>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('buyCheckout')">
+            <h3>{{stats[`buyCheckoutNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('buyCheckout', component.key)"></stat-comparison>
           </div>
         </div>
 
@@ -117,6 +149,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('buyTrolley', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('buyTrolley')">
+            <h3>{{stats[`buyTrolleyNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('buyTrolley', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Content (AEM CI)</h3>
         <div class="numbers">
@@ -129,6 +168,13 @@
             <h3>{{stats[`contentNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
             <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('content', component.key)"></stat-comparison>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('content')">
+            <h3>{{stats[`contentNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('content', component.key)"></stat-comparison>
           </div>
         </div>
 
@@ -145,6 +191,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('account', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('account')">
+            <h3>{{stats[`accountNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('account', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Customer - Identity</h3>
         <div class="numbers">
@@ -157,6 +210,13 @@
             <h3>{{stats[`identityNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
             <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('identity', component.key)"></stat-comparison>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('identity')">
+            <h3>{{stats[`identityNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('identity', component.key)"></stat-comparison>
           </div>
         </div>
 
@@ -173,6 +233,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('customerServiceAndComms', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('customerServiceAndComms')">
+            <h3>{{stats[`customerServiceAndCommsNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('customerServiceAndComms', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Loyalty &amp; Rewards</h3>
         <div class="numbers">
@@ -185,6 +252,13 @@
             <h3>{{stats[`loyaltyNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
             <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('loyalty', component.key)"></stat-comparison>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('loyalty')">
+            <h3>{{stats[`loyaltyNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('loyalty', component.key)"></stat-comparison>
           </div>
         </div>
 
@@ -201,6 +275,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('recipes', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('recipes')">
+            <h3>{{stats[`recipesNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('recipes', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Slots &amp; Routing</h3>
         <div class="numbers">
@@ -215,6 +296,13 @@
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('slots', component.key)"></stat-comparison>
           </div>
         </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('slots')">
+            <h3>{{stats[`slotsNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('slots', component.key)"></stat-comparison>
+          </div>
+        </div>
 
         <h3>Cross-cutting (missing team assignment)</h3>
         <div class="numbers">
@@ -227,6 +315,13 @@
             <h3>{{stats[`crossCuttingNumDeprecatedFiles${component.key}`].mostRecent.formatted}}</h3>
             <p>{{component.name}} - files with {{deprecatedOrToBeDeprecated(component.key)}} {{lowercase(component.name)}}</p>
             <stat-comparison v-bind:comparison="comparisonByTeamAndComponent('crossCutting', component.key)"></stat-comparison>
+          </div>
+        </div>
+        <div class="numbers">
+          <div class="down-is-good" v-for="component in priorityComponentsForTeamHTMLElements('crossCutting')">
+            <h3>{{stats[`crossCuttingNumDeprecatedHTMLElementFiles${component.key}`].mostRecent.formatted}}</h3>
+            <p>{{component.name}} - files with raw HTML elements</p>
+            <stat-comparison v-bind:comparison="comparisonByTeamAndComponentHTMLElements('crossCutting', component.key)"></stat-comparison>
           </div>
         </div>
 			</div>

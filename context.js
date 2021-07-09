@@ -37,6 +37,7 @@ export const componentPathsByTeam = {
     'components/Search',
     'components/ShoppingList',
     'components/SiteHeader',
+    'components/SitePinBar',
     'components/SiteSideBar',
     'components/TrolleyActions',
   ],
@@ -121,4 +122,10 @@ export const priorityDeprecatedComponentPaths = {
   ],
   ICONS: ['components/wdx/Iconography'],
   TYPOGRAPHY: ['components/wdx/Text'],
+};
+
+export const priorityDeprecatedRawHTMLElements = {
+  ANCHOR_LINK: ['a'],
+  BUTTON: ['button'],
+  TYPOGRAPHY: ['p', 'span', 'dd', 'dt', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
 };

@@ -2,7 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import lineByLine from 'n-readlines';
 
-import { priorityDeprecatedComponentPaths } from './context.js';
+import { priorityDeprecatedComponentPaths, priorityDeprecatedRawHTMLElements } from './context.js';
 import { generateDeprecatedCsv, generatePriorityDeprecatedCsv } from './csv-generator.js';
 import {
   addFileWithDeprecated,
@@ -19,7 +19,10 @@ import {
   updateDeprecatedMissingTeamFilesAndCounts,
   updatePriorityDeprecatedByTeamFilesAndCounts,
   updatePriorityDeprecatedFilesAndCounts,
+  updatePriorityDeprecatedHTMLElementFilesAndCounts,
+  updatePriorityDeprecatedHTMLElementsByTeamFilesAndCounts,
   updatePriorityDeprecatedMissingTeamFilesAndCounts,
+  updatePriorityDeprecatedHTMLElementsMissingTeamFilesAndCounts,
 } from './update-utils.js';
 import { initDatabase, updateStat } from './db.js';
 
@@ -32,12 +35,16 @@ let filesWithPriorityDeprecatedMissingTeam = {};
 let filesWithDeprecated = [];
 let filesWithDeprecatedByComponent = {};
 let filesWithDeprecatedMissingTeam = [];
+let filesWithPriorityDeprecatedHTMLElementsMissingTeam = {};
 let filesWithDeprecatedMissingTeamByComponentPath = {};
 let filesWithPriorityDeprecated = {};
+let filesWithPriorityDeprecatedHTMLElements = {};
 let numDeprecatedInstances = 0;
 let numIngredientsComponents = 0;
 let numPriorityDeprecatedInstances = {};
+let numPriorityDeprecatedHTMLElements = {};
 let priorityDeprecatedComponentsByTeamAndComponent = {};
+let priorityDeprecatedHTMLElementsByTeamAndComponent = {};
 
 initDatabase();
 
@@ -90,6 +97,25 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
           addFileWithPriorityDeprecated(
             filesWithPriorityDeprecated,
             numPriorityDeprecatedInstances,
+            filepath,
+            componentKey,
+          );
+        }
+      }
+
+      // Raw HTML elements
+      for (const componentKey of Object.keys(priorityDeprecatedRawHTMLElements)) {
+        const match = priorityDeprecatedRawHTMLElements[componentKey].find((element) => {
+          // "<" and the element tagname followed by either whitespace, newline, ">", or end of line
+          const regex = new RegExp(`<${element}([\\s\\n\\r>]|$)`);
+          return lineString.match(regex);
+        });
+
+        if (match) {
+          console.log(`Found a(n) ${componentKey} raw ${match} element in ${filepath}`, lineString);
+          addFileWithPriorityDeprecated(
+            filesWithPriorityDeprecatedHTMLElements,
+            numPriorityDeprecatedHTMLElements,
             filepath,
             componentKey,
           );
@@ -156,6 +182,48 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   updatePriorityDeprecatedByTeamFilesAndCounts(priorityDeprecatedComponentsByTeamAndComponent);
 
   updatePriorityDeprecatedMissingTeamFilesAndCounts(filesWithPriorityDeprecatedMissingTeam);
+
+  console.log(
+    '\n\n**** filesWithPriorityDeprecatedHTMLElements',
+    filesWithPriorityDeprecatedHTMLElements,
+  );
+
+  // HTML elements by team
+  for (const componentKey of Object.keys(filesWithPriorityDeprecatedHTMLElements)) {
+    console.log('**** COMPONENT KEY', componentKey);
+    filesWithPriorityDeprecatedHTMLElements[componentKey].forEach(
+      (fileWithPriorityDeprecatedHTMLElement) => {
+        const teamName = findTeamFromFilepath(fileWithPriorityDeprecatedHTMLElement);
+        if (teamName) {
+          addFileWithPriorityDeprecatedByTeam(
+            teamName,
+            componentKey,
+            fileWithPriorityDeprecatedHTMLElement,
+            priorityDeprecatedHTMLElementsByTeamAndComponent,
+          );
+        } else {
+          addFileWithPriorityDeprecatedMissingTeam(
+            componentKey,
+            fileWithPriorityDeprecatedHTMLElement,
+            filesWithPriorityDeprecatedHTMLElementsMissingTeam,
+          );
+        }
+      },
+    );
+  }
+
+  updatePriorityDeprecatedHTMLElementFilesAndCounts(
+    filesWithPriorityDeprecatedHTMLElements,
+    numPriorityDeprecatedHTMLElements,
+  );
+
+  updatePriorityDeprecatedHTMLElementsByTeamFilesAndCounts(
+    priorityDeprecatedHTMLElementsByTeamAndComponent,
+  );
+
+  updatePriorityDeprecatedHTMLElementsMissingTeamFilesAndCounts(
+    filesWithPriorityDeprecatedHTMLElementsMissingTeam,
+  );
 
   console.log(
     'Tech debt per design system component',

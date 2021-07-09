@@ -1,7 +1,11 @@
 import lineByLine from 'n-readlines';
 import { updateStat } from './db.js';
 
-import { componentPathsByTeam, priorityDeprecatedComponentPaths } from './context.js';
+import {
+  componentPathsByTeam,
+  priorityDeprecatedComponentPaths,
+  priorityDeprecatedRawHTMLElements,
+} from './context.js';
 
 export const addFileWithDeprecated = (
   filesWithDeprecated,
@@ -191,6 +195,25 @@ export const logPriorityDeprecatedFilesAndCounts = (
   filesWithPriorityDeprecated[componentKey].forEach((file) => console.log(file));
 };
 
+export const logPriorityDeprecatedHTMLElementFilesAndCounts = (
+  componentKey,
+  filesWithPriorityDeprecatedHTMLElements,
+  numPriorityDeprecatedHTMLElements,
+) => {
+  console.log('\n--');
+  console.log(
+    `Num of files with deprecated ${componentKey} HTML elements`,
+    filesWithPriorityDeprecatedHTMLElements[componentKey]?.length ?? 0,
+  );
+  console.log(
+    `Num of instances of deprecated ${componentKey} HTML elements`,
+    numPriorityDeprecatedHTMLElements[componentKey] ?? 0,
+  );
+
+  console.log(`\nFiles with deprecated ${componentKey} HTML elements:\n`);
+  filesWithPriorityDeprecatedHTMLElements[componentKey].forEach((file) => console.log(file));
+};
+
 export const logPriorityDeprecatedByTeamFilesAndCounts = (
   priorityDeprecatedComponentsByTeamAndComponent,
 ) => {
@@ -215,6 +238,30 @@ export const logPriorityDeprecatedByTeamFilesAndCounts = (
   });
 };
 
+export const logPriorityDeprecatedHTMLELementsByTeamFilesAndCounts = (
+  priorityDeprecatedHTMLElementsByTeamAndComponent,
+) => {
+  console.log('\n-- Priority HTML Elements By Team --');
+
+  Object.keys(priorityDeprecatedHTMLElementsByTeamAndComponent).forEach((teamName) => {
+    Object.keys(priorityDeprecatedHTMLElementsByTeamAndComponent[teamName]).forEach(
+      (componentKey) => {
+        console.log(
+          `\n-- ${teamName} team files using deprecated ${componentKey} raw HTML elements (${priorityDeprecatedHTMLElementsByTeamAndComponent[teamName][componentKey].length}) --`,
+        );
+        priorityDeprecatedHTMLElementsByTeamAndComponent[teamName][componentKey].forEach((file) =>
+          console.log(file),
+        );
+
+        updateStat(
+          `${teamName}NumDeprecatedHTMLElementFiles${componentKey}`,
+          priorityDeprecatedHTMLElementsByTeamAndComponent[teamName][componentKey].length,
+        );
+      },
+    );
+  });
+};
+
 export const logPriorityDeprecatedMissingTeamFilesAndCounts = (
   filesWithPriorityDeprecatedMissingTeam,
 ) => {
@@ -223,6 +270,19 @@ export const logPriorityDeprecatedMissingTeamFilesAndCounts = (
       `\n-- Files with deprecated priority ${componentKey} components missing teams (${filesWithPriorityDeprecatedMissingTeam[componentKey].length}) --`,
     );
     filesWithPriorityDeprecatedMissingTeam[componentKey].forEach((file) => console.log(file));
+  });
+};
+
+export const logPriorityDeprecatedHTMLElementsMissingTeamFilesAndCounts = (
+  filesWithPriorityDeprecatedHTMLElementsMissingTeam,
+) => {
+  Object.keys(filesWithPriorityDeprecatedHTMLElementsMissingTeam).forEach((componentKey) => {
+    console.log(
+      `\n-- Files with deprecated priority ${componentKey} raw HTML elements missing teams (${filesWithPriorityDeprecatedHTMLElementsMissingTeam[componentKey].length}) --`,
+    );
+    filesWithPriorityDeprecatedHTMLElementsMissingTeam[componentKey].forEach((file) =>
+      console.log(file),
+    );
   });
 };
 
@@ -274,6 +334,31 @@ export const updatePriorityDeprecatedFilesAndCounts = (
   }
 };
 
+export const updatePriorityDeprecatedHTMLElementFilesAndCounts = (
+  filesWithPriorityDeprecatedHTMLElements,
+  numPriorityDeprecatedHTMLElements,
+  log = true,
+) => {
+  if (log) console.log('\n-- Priority Deprecated Raw HTML Elements --');
+  for (const componentKey of Object.keys(priorityDeprecatedRawHTMLElements)) {
+    if (log)
+      logPriorityDeprecatedHTMLElementFilesAndCounts(
+        componentKey,
+        filesWithPriorityDeprecatedHTMLElements,
+        numPriorityDeprecatedHTMLElements,
+      );
+
+    updateStat(
+      `numDeprecatedHTMLElementFiles${componentKey}`,
+      filesWithPriorityDeprecatedHTMLElements[componentKey].length,
+    );
+    updateStat(
+      `numDeprecatedHTMLElementInstances${componentKey}`,
+      numPriorityDeprecatedHTMLElements[componentKey],
+    );
+  }
+};
+
 export const updatePriorityDeprecatedByTeamFilesAndCounts = (
   priorityDeprecatedComponentsByTeamAndComponent,
   log = true,
@@ -288,6 +373,28 @@ export const updatePriorityDeprecatedByTeamFilesAndCounts = (
         updateStat(
           `${teamName}numDeprecatedFiles${componentKey}`,
           priorityDeprecatedComponentsByTeamAndComponent[teamName][componentKey].length,
+        );
+      },
+    );
+  });
+};
+
+export const updatePriorityDeprecatedHTMLElementsByTeamFilesAndCounts = (
+  priorityDeprecatedHTMLElementsByTeamAndComponent,
+  log = true,
+) => {
+  if (log) {
+    logPriorityDeprecatedHTMLELementsByTeamFilesAndCounts(
+      priorityDeprecatedHTMLElementsByTeamAndComponent,
+    );
+  }
+
+  Object.keys(priorityDeprecatedHTMLElementsByTeamAndComponent).forEach((teamName) => {
+    Object.keys(priorityDeprecatedHTMLElementsByTeamAndComponent[teamName]).forEach(
+      (componentKey) => {
+        updateStat(
+          `${teamName}numDeprecatedHTMLElementFiles${componentKey}`,
+          priorityDeprecatedHTMLElementsByTeamAndComponent[teamName][componentKey].length,
         );
       },
     );
@@ -313,6 +420,25 @@ export const updatePriorityDeprecatedMissingTeamFilesAndCounts = (
       updateStat(
         `crossCuttingNumDeprecatedFiles${componentKey}`,
         filesWithPriorityDeprecatedMissingTeam[componentKey].length,
+      );
+    }
+  }
+};
+
+export const updatePriorityDeprecatedHTMLElementsMissingTeamFilesAndCounts = (
+  filesWithPriorityDeprecatedHTMLElementsMissingTeam,
+  log = true,
+) => {
+  if (log)
+    logPriorityDeprecatedHTMLElementsMissingTeamFilesAndCounts(
+      filesWithPriorityDeprecatedHTMLElementsMissingTeam,
+    );
+
+  for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
+    if (filesWithPriorityDeprecatedHTMLElementsMissingTeam[componentKey]) {
+      updateStat(
+        `crossCuttingNumDeprecatedHTMLElementFiles${componentKey}`,
+        filesWithPriorityDeprecatedHTMLElementsMissingTeam[componentKey].length,
       );
     }
   }
