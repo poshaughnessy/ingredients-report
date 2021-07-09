@@ -3,7 +3,11 @@ import glob from 'glob';
 import lineByLine from 'n-readlines';
 
 import { priorityDeprecatedComponentPaths, priorityDeprecatedRawHTMLElements } from './context.js';
-import { generateDeprecatedCsv, generatePriorityDeprecatedCsv } from './csv-generator.js';
+import {
+  generateDeprecatedCsv,
+  generatePriorityDeprecatedCsv,
+  generatePriorityDeprecatedHTMLElementsCsv,
+} from './csv-generator.js';
 import {
   addFileWithDeprecated,
   addFileWithDeprecatedByTeam,
@@ -240,6 +244,11 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
   generatePriorityDeprecatedCsv(
     priorityDeprecatedComponentsByTeamAndComponent,
     filesWithPriorityDeprecatedMissingTeam,
+  );
+
+  generatePriorityDeprecatedHTMLElementsCsv(
+    priorityDeprecatedHTMLElementsByTeamAndComponent,
+    filesWithPriorityDeprecatedHTMLElementsMissingTeam,
   );
 });
 
