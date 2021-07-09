@@ -111,7 +111,7 @@ export const componentPathsByTeam = {
  * These ones are for exact matches rather than checking just included in path
  */
 export const priorityDeprecatedComponentPaths = {
-  ANCHOR_LINK: ['components/AnchorLink'],
+  ANCHOR_LINK: ['components/AnchorLink', 'react-router-dom'],
   BUTTON: [
     'components/Button',
     'components/Button/Spinner',

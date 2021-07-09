@@ -49,7 +49,7 @@ getMostRecentStats()
         }
 
         data.priorityComponents = {
-          ANCHOR_LINK: 'Anchor links',
+          ANCHOR_LINK: 'Links',
           BUTTON: 'Buttons',
           ICONS: 'Icons',
           TYPOGRAPHY: 'Typography',

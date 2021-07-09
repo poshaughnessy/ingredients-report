@@ -78,7 +78,7 @@ export function getComparisonStats() {
   });
 }
 
-export function updateStat(statKey, statValues) {
+export function updateStat(statKey, statValue) {
   return new Promise(function (resolve, reject) {
     db.serialize(function () {
       const insertStmt = db.prepare(

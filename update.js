@@ -77,9 +77,14 @@ glob(`../wtr-website/src/**/*.js`, (err, files) => {
       }
 
       for (const componentKey of Object.keys(priorityDeprecatedComponentPaths)) {
-        const componentPath = priorityDeprecatedComponentPaths[componentKey].find((path) =>
-          lineString.includes(path),
-        );
+        const componentPath = priorityDeprecatedComponentPaths[componentKey].find((path) => {
+          // EXCEPTION - only count `import { Link } from 'react-router-dom'`, not all 'react-router-dom' imports
+          if (componentKey === 'ANCHOR_LINK' && path === 'react-router-dom') {
+            return lineString.includes(`{ Link } from '${path}'`);
+          } else {
+            return lineString.includes(path);
+          }
+        });
         if (componentPath) {
           console.log(`Found a(n) ${componentKey} in ${filepath}`, lineString);
           addFileWithPriorityDeprecated(
