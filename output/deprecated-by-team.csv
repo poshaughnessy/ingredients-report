@@ -157,14 +157,8 @@ slots,components/wdx/Text,/src/components/BookSlot/BookSlot.js
 slots,components/wdx/Text,/src/components/BookSlot/ConfirmSlot/ConfirmSlot.js
 slots,components/wdx/Text,/src/components/BookSlot/Header/Header.js
 slots,components/wdx/Text,/src/components/BookSlot/SlotGridOverlayMessaging/index.js
-customerServiceAndComms,components/wdx/Iconography,/src/components/ContactUsCard/ContactTable/Rows/Email.js
-customerServiceAndComms,components/wdx/Iconography,/src/components/ContactUsCard/ContactTable/Rows/FirstRowOpeningTimes/FirstRowOpeningTimes.js
-customerServiceAndComms,components/wdx/Iconography,/src/components/ContactUsCard/ContactTable/Rows/Phone.js
-customerServiceAndComms,components/wdx/Iconography,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
-customerServiceAndComms,components/wdx/Iconography,/src/components/Forms/utilities/SearchSelect/index.js
-customerServiceAndComms,components/wdx/Spinner,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 buyTrolley,components/Modal,/src/components/Trolley/Trolley.js
-loyalty,components/wdx/Text,/src/components/MyWaitrose/MyWaitroseRewards/MyWaitroseRewards.js
+customerServiceAndComms,components/wdx/Spinner,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 recipes,components/wdx/Text,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,components/wdx/Text,/src/components/Recipes/Content/Method/index.js
 crossCutting,components/wdx/Iconography,/src/components/Forms/utilities/Select/index.js

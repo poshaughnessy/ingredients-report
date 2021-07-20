@@ -168,13 +168,7 @@ loyalty,ANCHOR_LINK,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWa
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCard/OrderReplacementCard.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardLink/OrderReplacementCardLink.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardSuccess/OrderReplacementCardSuccess.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/MyWaitroseRewards.js
 customerServiceAndComms,ANCHOR_LINK,/src/components/CustomerServiceForms/OnlineOrderIssueForm/OnlineOrderIssueForm.js
-customerServiceAndComms,ICONS,/src/components/ContactUsCard/ContactTable/Rows/Email.js
-customerServiceAndComms,ICONS,/src/components/ContactUsCard/ContactTable/Rows/FirstRowOpeningTimes/FirstRowOpeningTimes.js
-customerServiceAndComms,ICONS,/src/components/ContactUsCard/ContactTable/Rows/Phone.js
-customerServiceAndComms,ICONS,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
-customerServiceAndComms,ICONS,/src/components/Forms/utilities/SearchSelect/index.js
 buyTrolley,ANCHOR_LINK,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js

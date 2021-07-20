@@ -138,6 +138,7 @@ browse,TYPOGRAPHY,/src/components/ProductPod/TrolleyChoices/TrolleyChoices.js
 browse,TYPOGRAPHY,/src/components/ProductPodExperimental/Attributes/index.js
 browse,TYPOGRAPHY,/src/components/ProductPodExperimental/Badge/index.js
 browse,TYPOGRAPHY,/src/components/ProductPodExperimental/Header/index.js
+browse,TYPOGRAPHY,/src/components/ProductPodExperimental/Image/index.js
 browse,TYPOGRAPHY,/src/components/ProductPodExperimental/TrolleyChoices/index.js
 browse,TYPOGRAPHY,/src/components/Search/AutoComplete/AutoComplete.js
 browse,TYPOGRAPHY,/src/components/Search/AutoComplete/Highlight/index.js
