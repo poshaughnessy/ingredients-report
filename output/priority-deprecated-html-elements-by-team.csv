@@ -1,6 +1,5 @@
 Team,Priority component,Found in filepath
 content,TYPOGRAPHY,/src/components/Accordion/Accordion.js
-content,TYPOGRAPHY,/src/components/CmsPage/partials/ServiceSelector.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/ErrorSummary/SummaryBox.js
 content,TYPOGRAPHY,/src/components/FullWidthNavigation/index.js
 content,TYPOGRAPHY,/src/components/ProductPicker/ProductPicker.js
@@ -213,6 +212,7 @@ browse,ANCHOR_LINK,/src/components/Search/Filters/FilterModal/index.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/LinksBar/index.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeaderLinks/index.js
 slots,TYPOGRAPHY,/src/components/BookSlot/Address/Address.js
+slots,TYPOGRAPHY,/src/components/BookSlot/BookSlot.js
 slots,TYPOGRAPHY,/src/components/BookSlot/CantEditSlotMessage/index.js
 slots,TYPOGRAPHY,/src/components/BookSlot/CollectionBranchAddressPanel/CollectionBranchAddressPanel.js
 slots,TYPOGRAPHY,/src/components/BookSlot/CollectionServiceSelector/CollectionServiceSelector.js
@@ -225,10 +225,8 @@ slots,TYPOGRAPHY,/src/components/BookSlot/ServiceSelection/ServiceSelection.js
 slots,TYPOGRAPHY,/src/components/BookSlot/Slot/Slot.js
 slots,TYPOGRAPHY,/src/components/BookSlot/SlotGrid/Table.js
 slots,TYPOGRAPHY,/src/components/BookSlot/SlotGridOverlayMessaging/index.js
-slots,TYPOGRAPHY,/src/components/BookSlot/SlotGridServiceSelection/Combo.js
 slots,BUTTON,/src/components/BookSlot/ExpandCollapsePanel/ExpandCollapsePanel.js
 slots,BUTTON,/src/components/BookSlot/Slot/Slot.js
-slots,BUTTON,/src/components/BookSlot/SlotGridServiceSelection/Combo.js
 slots,ANCHOR_LINK,/src/components/BookSlot/EditSlotLink/index.js
 slots,ANCHOR_LINK,/src/components/BookSlot/ProhibitedPage/ProhibitedPage.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/ContactUsCard/ContactUsCard.js
@@ -286,7 +284,6 @@ recipes,TYPOGRAPHY,/src/components/Recipes/Content/Allergens/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Ingredients/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
-recipes,TYPOGRAPHY,/src/components/Recipes/Content/Nutritional/index.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyList/TrolleyList.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleySize/index.js
