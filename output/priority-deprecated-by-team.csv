@@ -4,7 +4,6 @@ account,ANCHOR_LINK,/src/components/MarketingPreferences/index.js
 account,ANCHOR_LINK,/src/components/MyAccount/List.js
 account,ANCHOR_LINK,/src/components/MyDetails/ChangePasswordModal/ChangePasswordModal.js
 account,ANCHOR_LINK,/src/components/MyDetails/MyDetails.js
-account,BUTTON,/src/components/MyDetails/AccountDetails/AccountDetails.js
 account,ICONS,/src/components/Address/common/ChooseAddressModal/AddAddressView/index.js
 account,ICONS,/src/components/MarketingPreferences/index.js
 account,ICONS,/src/components/MyAccount/List.js
@@ -138,7 +137,7 @@ loyalty,ANCHOR_LINK,/src/components/MyWaitrose/Form/Form.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MembershipBenefits/MyMembershipBenefits/MyMembershipBenefits.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseCardAndDetails/MyWaitroseMemberView/MyWaitroseAddress/MyWaitroseAddress.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseHubHomepage/MyWaitroseHubHomepage.js
-loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Reward/Reward.js
+loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Reward/Reward.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Voucher/Voucher.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWaitrose.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCard/OrderReplacementCard.js

@@ -98,7 +98,6 @@ account,components/wdx/Text,/src/components/Address/common/AddressTile/AddressTi
 account,components/wdx/Text,/src/components/SeachNavigateBack/SeachNavigateBack.js
 account,components/wdx/FormattedModal,/src/components/Address/common/CannotAlterAddressModal/CannotAlterAddressModal.js
 account,components/Accordion/Accordion,/src/components/MarketingPreferences/index.js
-account,components/wdx/buttons/EditButton,/src/components/MyDetails/AccountDetails/AccountDetails.js
 browse,components/wdx/Card,/src/components/ShoppingLists/Card/ShoppingListCard.js
 browse,components/wdx/Iconography,/src/components/Product/Attributes/index.js
 browse,components/wdx/Iconography,/src/components/SiteHeader/ShoppingSummary/TrolleyInformation/TrolleyInformation.js

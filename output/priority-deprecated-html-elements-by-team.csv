@@ -256,7 +256,8 @@ loyalty,TYPOGRAPHY,/src/components/MyWaitrose/Form/MarketingSubscription.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/JoinMyWaitrose/JoinMyWaitrose.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MembershipBenefits/MyPartnershipBenfits.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseHubNavigation/MyWaitroseHubNavigation.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Rewards/Rewards.js
+loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/InStoreRewards/InStoreRewards.js
+loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/OnlineRewards/OnlineRewards.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Vouchers.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWaitrose.js
 loyalty,TYPOGRAPHY,/src/components/OrderReplacementCard/OrderReplacementCard.js
