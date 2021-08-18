@@ -5,9 +5,6 @@ account,ANCHOR_LINK,/src/components/MyAccount/List.js
 account,ANCHOR_LINK,/src/components/MyDetails/ChangePasswordModal/ChangePasswordModal.js
 account,ANCHOR_LINK,/src/components/MyDetails/MyDetails.js
 account,ICONS,/src/components/Address/common/ChooseAddressModal/AddAddressView/index.js
-account,ICONS,/src/components/MarketingPreferences/index.js
-account,ICONS,/src/components/MyAccount/List.js
-account,ICONS,/src/components/MyAccount/MyMembership.js
 account,ICONS,/src/components/SeachNavigateBack/SeachNavigateBack.js
 account,TYPOGRAPHY,/src/components/Address/AddressForm/AddressName/StaticAddressName.js
 account,TYPOGRAPHY,/src/components/Address/common/AddressTile/AddressTile.js
@@ -22,7 +19,6 @@ identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/errors.js
 identity,ANCHOR_LINK,/src/components/Registration/Success/Success.js
 identity,ICONS,/src/components/AuthenticationAction/SignIn/SignIn.js
 identity,ICONS,/src/components/Registration/Success/Success.js
-identity,ICONS,/src/components/ReturnToAdmin/ReturnToAdmin.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotGridServiceSelection/SlotGridServiceSelectionTabs/index.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotsServiceMessage/BranchSpecificMessaging/index.js
 slots,ICONS,/src/components/BookSlot/ConfirmSlot/ConfirmSlot.js
@@ -137,8 +133,9 @@ loyalty,ANCHOR_LINK,/src/components/MyWaitrose/Form/Form.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MembershipBenefits/MyMembershipBenefits/MyMembershipBenefits.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseCardAndDetails/MyWaitroseMemberView/MyWaitroseAddress/MyWaitroseAddress.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseHubHomepage/MyWaitroseHubHomepage.js
+loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/InStoreVouchers/InStoreVoucherModal/InStoreVoucherModal.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Reward/Reward.js
-loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Vouchers/Voucher/Voucher.js
+loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseRewards/Voucher/Voucher.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWaitrose.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCard/OrderReplacementCard.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardLink/OrderReplacementCardLink.js
@@ -153,7 +150,7 @@ crossCutting,ANCHOR_LINK,/src/components/CategoryBack/index.js
 crossCutting,ANCHOR_LINK,/src/components/Conflict/ConflictMessage/index.js
 crossCutting,ANCHOR_LINK,/src/components/CustomerServiceLinks/index.js
 crossCutting,ANCHOR_LINK,/src/components/Error/ProductNotFound/index.js
-crossCutting,ANCHOR_LINK,/src/components/ExtendedNavigationCard/index.js
+crossCutting,ANCHOR_LINK,/src/components/ExtendedNavigationCard/AnchorLinkWrapper.js
 crossCutting,ANCHOR_LINK,/src/components/GoToTrolley/index.js
 crossCutting,ANCHOR_LINK,/src/components/HeaderLogo/index.js
 crossCutting,ANCHOR_LINK,/src/components/Image/ImageLink.js
