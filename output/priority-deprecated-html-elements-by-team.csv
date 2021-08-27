@@ -72,6 +72,7 @@ account,TYPOGRAPHY,/src/components/MarketingPreferences/index.js
 account,TYPOGRAPHY,/src/components/MyAccount/List.js
 account,TYPOGRAPHY,/src/components/MyAccount/MyMembership.js
 account,TYPOGRAPHY,/src/components/MyDetails/AccountDetails/AccountDetails.js
+account,TYPOGRAPHY,/src/components/MyDetails/MyDetails.js
 account,ANCHOR_LINK,/src/components/Address/Admin/AdminAddress.js
 account,ANCHOR_LINK,/src/components/MarketingPreferences/index.js
 account,BUTTON,/src/components/MyDetails/AccountDetails/AccountDetails.js
@@ -224,19 +225,7 @@ slots,ANCHOR_LINK,/src/components/BookSlot/EditSlotLink/index.js
 slots,ANCHOR_LINK,/src/components/BookSlot/ProhibitedPage/ProhibitedPage.js
 slots,BUTTON,/src/components/BookSlot/ExpandCollapsePanel/ExpandCollapsePanel.js
 slots,BUTTON,/src/components/BookSlot/Slot/Slot.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/ContactUsCard/ContactUsCard.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/ContactUsCard/MyWaitrose/MyWaitrose.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/BranchFeedbackForm/BranchFeedbackForm.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/OnlineOrderIssueForm/MissingItem.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/OnlineOrderIssueForm/OnlineOrderIssueForm.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/OnlineOrderIssueForm/Substitution.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/ProductIssuesForm/Form/Form.component.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/ProductIssuesForm/Form/ReportAnotherProduct.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/ProductIssuesForm/PurchaseDetails.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/ProductIssuesForm/ReceiptDetails.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/shared/CustomerDetails.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/StockQueriesForm/StockQueriesForm.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/CustomerServiceForms/StockQueriesForm/StockQueryDetails.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/InputImageUpload.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/Preview.js
@@ -296,9 +285,6 @@ crossCutting,TYPOGRAPHY,/src/components/Branch/BranchAddress/BranchAddress.js
 crossCutting,TYPOGRAPHY,/src/components/Button/Submit.js
 crossCutting,TYPOGRAPHY,/src/components/CarouselSlide/CarouselSlide.js
 crossCutting,TYPOGRAPHY,/src/components/Conflict/Resolution/Message/index.js
-crossCutting,TYPOGRAPHY,/src/components/CustomerFeedback/CustomerFeedback.js
-crossCutting,TYPOGRAPHY,/src/components/CustomerFeedback/FeedbackSelector/index.js
-crossCutting,TYPOGRAPHY,/src/components/CustomerFeedback/ThankYouMessage/index.js
 crossCutting,TYPOGRAPHY,/src/components/Error/ErrorPanel/index.js
 crossCutting,TYPOGRAPHY,/src/components/ExtendedNavigationCard/index.js
 crossCutting,TYPOGRAPHY,/src/components/Favourites/FavouritesSorting/FavouritesSorting.js

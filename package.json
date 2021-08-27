@@ -6,8 +6,8 @@
   },
   "description": "Ingredients design system report",
   "scripts": {
-    "gather": "node gather-stats",
-    "start": "node update",
+    "update": "node update",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Waitrose - Project IP",

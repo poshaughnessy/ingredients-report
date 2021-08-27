@@ -59,7 +59,6 @@ buyCheckout,components/wdx/Spinner,/src/components/GiftVoucher/index.js
 buyCheckout,components/wdx/Spinner,/src/components/MyPaymentCards/MyPaymentCards.js
 buyCheckout,components/wdx/Alert,/src/components/OrderDetails/OrderDetails.js
 buyCheckout,components/wdx/Alert,/src/components/PaymentCardRequired/index.js
-buyCheckout,components/wdx/Alert,/src/components/PaymentSavedCard/index.js
 buyCheckout,components/wdx/Alert,/src/components/ViewOrder/Alert/OrderAlert.js
 buyCheckout,components/wdx/Text,/src/components/Checkout/CarrierBags/CarrierBags.js
 buyCheckout,components/wdx/Text,/src/components/CheckoutCarrierBagOptions/CheckoutCarrierBagOptions.js
