@@ -4,7 +4,6 @@ account,ANCHOR_LINK,/src/components/MarketingPreferences/index.js
 account,ANCHOR_LINK,/src/components/MyAccount/List.js
 account,ANCHOR_LINK,/src/components/MyDetails/ChangePasswordModal/ChangePasswordModal.js
 account,ANCHOR_LINK,/src/components/MyDetails/MyDetails.js
-account,ICONS,/src/components/Address/common/ChooseAddressModal/AddAddressView/index.js
 account,ICONS,/src/components/SeachNavigateBack/SeachNavigateBack.js
 account,TYPOGRAPHY,/src/components/SeachNavigateBack/SeachNavigateBack.js
 identity,ANCHOR_LINK,/src/components/AuthenticationAction/SignIn/SignIn.js
@@ -15,8 +14,6 @@ identity,ANCHOR_LINK,/src/components/Login/Login.js
 identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/AccountDetails.js
 identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/errors.js
 identity,ANCHOR_LINK,/src/components/Registration/Success/Success.js
-identity,ICONS,/src/components/AuthenticationAction/SignIn/SignIn.js
-identity,ICONS,/src/components/Registration/Success/Success.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotGridServiceSelection/SlotGridServiceSelectionTabs/index.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotsServiceMessage/BranchSpecificMessaging/index.js
 slots,ICONS,/src/components/BookSlot/ConfirmSlot/ConfirmSlot.js
