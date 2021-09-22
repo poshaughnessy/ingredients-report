@@ -258,7 +258,6 @@ crossCutting,TYPOGRAPHY,/src/cms-components/CmsContentFragment/index.js
 crossCutting,TYPOGRAPHY,/src/cms-components/CmsErrorBoundary/index.js
 crossCutting,TYPOGRAPHY,/src/cms-components/CmsMissedFavourites/index.js
 crossCutting,TYPOGRAPHY,/src/cms-components/CmsMissedOffers/index.js
-crossCutting,TYPOGRAPHY,/src/cms-components/CmsRecentOrder/index.js
 crossCutting,TYPOGRAPHY,/src/cms-components/WaitroseMobileContent/index.js
 crossCutting,TYPOGRAPHY,/src/components/AmendOrderAlert/AmendOrderAlert.js
 crossCutting,TYPOGRAPHY,/src/components/CarouselSlide/CarouselSlide.js

@@ -185,8 +185,19 @@ button.auto-update {
   margin: 0 auto;
 }
 
-[v-cloak] {
+.v-cloak-placeholder {
   display: none;
+  text-align: center;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+[v-cloak] .v-cloak-contents {
+  display: none;
+}
+
+[v-cloak] .v-cloak-placeholder {
+  display: block;
 }
 
 footer {
