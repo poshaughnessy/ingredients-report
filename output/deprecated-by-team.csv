@@ -85,6 +85,7 @@ browse,components/Modal,/src/components/AddAllItemsErrorModal/AddAllItemsErrorMo
 browse,components/Modal,/src/components/HomePage/index.js
 browse,components/Modal,/src/components/MultiSearch/Modal/MultiSearchModal.js
 browse,components/Modal,/src/components/Product/Image/index.js
+browse,components/Modal,/src/components/ProductGrid/ProductGrid.js
 browse,components/wdx/Modal,/src/components/ListsModal/ListsModal.js
 browse,components/wdx/Alert,/src/components/ProductDetails/Content/NoReviewsAlert.js
 browse,components/wdx/Alert,/src/components/Search/SearchHeader/SearchHeader.js
@@ -98,12 +99,10 @@ browse,components/Button,/src/components/ProceedThroughCheckout/ProceedThroughCh
 browse,components/wdx/buttons/EditButton,/src/components/PageTitle/index.js
 browse,components/Accordion/Accordion,/src/components/ShoppingLists/Card/Accordion/index.js
 browse,components/Form/TextInput,/src/components/TrolleyActions/PersonalisedProductTrolleyActions/PersonalisedProductTrolleyActions.js
-slots,components/wdx/Iconography,/src/components/BookSlot/ConfirmSlot/ConfirmSlot.js
 slots,components/wdx/Iconography,/src/components/BookSlot/SlotGrid/Table.js
 slots,components/Modal,/src/components/BookSlot/SlotGrid/SlotGrid.js
 slots,components/Modal,/src/components/BookSlot/SlotsChristmasModal/SlotsChristmasModal.js
 slots,components/wdx/Text,/src/components/BookSlot/BookSlot.js
-slots,components/wdx/Text,/src/components/BookSlot/ConfirmSlot/ConfirmSlot.js
 slots,components/wdx/Text,/src/components/BookSlot/Header/Header.js
 slots,components/wdx/Text,/src/components/BookSlot/SlotGridOverlayMessaging/index.js
 account,components/wdx/Iconography,/src/components/SeachNavigateBack/SeachNavigateBack.js
