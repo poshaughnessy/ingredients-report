@@ -28,7 +28,6 @@ buyCheckout,TYPOGRAPHY,/src/components/CheckoutOrderSummary/CheckoutOrderSummary
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutSectionTitle/index.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutTotals/index.js
 buyCheckout,TYPOGRAPHY,/src/components/GiftCard/index.js
-buyCheckout,TYPOGRAPHY,/src/components/GiftCardList/GiftCardList.js
 buyCheckout,TYPOGRAPHY,/src/components/GiftCardList/GiftCardListChild.js
 buyCheckout,TYPOGRAPHY,/src/components/GiftVoucher/index.js
 buyCheckout,TYPOGRAPHY,/src/components/GiftVoucherList/GiftVoucherList.js
@@ -199,7 +198,6 @@ browse,BUTTON,/src/components/SiteHeader/SlideOutNav/MenuLink/MenuLink.js
 browse,BUTTON,/src/components/SiteHeader/SlideOutNav/SlideOutNav.js
 browse,BUTTON,/src/components/SitePinBar/SitePinBar.js
 browse,BUTTON,/src/components/SiteSideBar/SiteSideBar.js
-slots,TYPOGRAPHY,/src/components/BookSlot/Address/Address.js
 slots,TYPOGRAPHY,/src/components/BookSlot/BookSlot.js
 slots,TYPOGRAPHY,/src/components/BookSlot/CantEditSlotMessage/index.js
 slots,TYPOGRAPHY,/src/components/BookSlot/CollectionBranchAddressPanel/CollectionBranchAddressPanel.js
@@ -222,7 +220,6 @@ customerServiceAndComms,TYPOGRAPHY,/src/components/ContactUsCard/MyWaitrose/MyWa
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/InputImageUpload.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/Preview.js
-customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/SearchSelect/index.js
 customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Email.js
 customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Phone.js
 loyalty,TYPOGRAPHY,/src/components/CookieAlert/FullModal/index.js
@@ -245,6 +242,7 @@ identity,ANCHOR_LINK,/src/components/ForgotPassword/Form.js
 identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/errors.js
 identity,BUTTON,/src/components/AuthenticationAction/SignOut/SignOut.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Allergens/index.js
+recipes,TYPOGRAPHY,/src/components/Recipes/Content/CardNav/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Ingredients/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
@@ -260,6 +258,7 @@ crossCutting,TYPOGRAPHY,/src/cms-components/CmsMissedOffers/index.js
 crossCutting,TYPOGRAPHY,/src/cms-components/WaitroseMobileContent/index.js
 crossCutting,TYPOGRAPHY,/src/components/AmendOrderAlert/AmendOrderAlert.js
 crossCutting,TYPOGRAPHY,/src/components/CarouselSlide/CarouselSlide.js
+crossCutting,TYPOGRAPHY,/src/components/Conflict/OutOfStock/index.js
 crossCutting,TYPOGRAPHY,/src/components/Conflict/Resolution/Message/index.js
 crossCutting,TYPOGRAPHY,/src/components/Error/ErrorPanel/index.js
 crossCutting,TYPOGRAPHY,/src/components/ExtendedNavigationCard/index.js
@@ -293,6 +292,7 @@ crossCutting,TYPOGRAPHY,/src/components/Offers/OfferDetails/OfferDetails.js
 crossCutting,TYPOGRAPHY,/src/components/OffersToggle/index.js
 crossCutting,TYPOGRAPHY,/src/components/PendingOrders/PendingOrders.js
 crossCutting,TYPOGRAPHY,/src/components/PreviousOrders/PreviousOrders.js
+crossCutting,TYPOGRAPHY,/src/components/ProductTags/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MessageIcon/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MyWaitroseIcon/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoText/PromoText.js

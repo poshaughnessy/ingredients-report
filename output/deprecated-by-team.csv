@@ -60,8 +60,6 @@ buyCheckout,components/wdx/Spinner,/src/components/MyPaymentCards/MyPaymentCards
 buyCheckout,components/wdx/Alert,/src/components/OrderDetails/OrderDetails.js
 buyCheckout,components/wdx/Alert,/src/components/PaymentCardRequired/index.js
 buyCheckout,components/wdx/Alert,/src/components/ViewOrder/Alert/OrderAlert.js
-buyCheckout,components/wdx/FormattedModal,/src/components/CheckoutError/CheckoutError.js
-buyCheckout,components/wdx/FormattedModal,/src/components/MyPaymentCardsRemoveModal/MyPaymentCardsRemoveModal.js
 buyCheckout,components/wdx/Text,/src/components/Checkout/CarrierBags/CarrierBags.js
 buyCheckout,components/wdx/Text,/src/components/CheckoutCarrierBagOptions/CheckoutCarrierBagOptions.js
 buyCheckout,components/wdx/Text,/src/components/OrderConfirmation/OrderConfirmation.js
@@ -72,6 +70,8 @@ buyCheckout,components/Button,/src/components/GiftVouchersAndCards/GiftVouchersA
 buyCheckout,components/Button,/src/components/PaymentCardForm/PaymentCardForm.js
 buyCheckout,components/Button,/src/components/PaymentSavedCard/index.js
 buyCheckout,components/Button,/src/components/PendingOrderSummary/PendingOrderSummary.js
+buyCheckout,components/wdx/FormattedModal,/src/components/CheckoutError/CheckoutError.js
+buyCheckout,components/wdx/FormattedModal,/src/components/MyPaymentCardsRemoveModal/MyPaymentCardsRemoveModal.js
 buyCheckout,components/wdx/buttons/ViewOrder,/src/components/OrderConfirmation/OrderSuccess/index.js
 buyCheckout,components/wdx/buttons/ViewOrder,/src/components/PendingOrderSummary/PendingOrderSummary.js
 buyCheckout,components/wdx/buttons/ViewOrder,/src/components/PreviousOrderSummary/PreviousOrderSummary.js
@@ -100,6 +100,7 @@ browse,components/wdx/buttons/EditButton,/src/components/PageTitle/index.js
 browse,components/Accordion/Accordion,/src/components/ShoppingLists/Card/Accordion/index.js
 browse,components/Form/TextInput,/src/components/TrolleyActions/PersonalisedProductTrolleyActions/PersonalisedProductTrolleyActions.js
 slots,components/wdx/Iconography,/src/components/BookSlot/SlotGrid/Table.js
+slots,components/Modal,/src/components/BookSlot/CollectionBranchAddressPanel/CollectionTypesButtonAndModal/index.js
 slots,components/Modal,/src/components/BookSlot/SlotGrid/SlotGrid.js
 slots,components/Modal,/src/components/BookSlot/SlotsChristmasModal/SlotsChristmasModal.js
 slots,components/wdx/Text,/src/components/BookSlot/BookSlot.js
@@ -114,7 +115,6 @@ account,components/wdx/Modal,/src/components/MyDetails/ChangePasswordModal/Chang
 account,components/wdx/Spinner,/src/components/Address/AddAddressModal/index.js
 account,components/wdx/Alert,/src/components/Address/AddressBook/AddressBook.js
 account,components/wdx/Alert,/src/components/Address/common/ChooseAddressModal/AddressBookView/index.js
-account,components/wdx/FormattedModal,/src/components/Address/common/CannotAlterAddressModal/CannotAlterAddressModal.js
 account,components/wdx/Text,/src/components/SeachNavigateBack/SeachNavigateBack.js
 buyTrolley,components/Modal,/src/components/Trolley/Trolley.js
 customerServiceAndComms,components/wdx/Spinner,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
