@@ -20,4 +20,4 @@ node update
 node server
 ```
 
-5. As a temporary solution, the dashboard is currently [hosted on Render](https://ingredients-report.onrender.com/). If you would like to deploy updates there in the short term, please ask Peter O'Shaughnessy for help.
+5. As a temporary solution, the dashboard is currently [hosted on Render](https://wtr-ingredients-report.onrender.com/). If you would like to deploy updates there in the short term, please ask Peter O'Shaughnessy or Ashley Heath for help.

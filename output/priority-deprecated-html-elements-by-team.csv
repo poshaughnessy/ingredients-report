@@ -21,7 +21,6 @@ buyCheckout,TYPOGRAPHY,/src/components/AddToCalendar/index.js
 buyCheckout,TYPOGRAPHY,/src/components/Checkout/Checkout.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutBillingAddress/CheckoutBillingAddress.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutCarrierBagOptions/CheckoutCarrierBagOptions.js
-buyCheckout,TYPOGRAPHY,/src/components/CheckoutDeliveryOptions/index.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutError/CheckoutError.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutHeader/index.js
 buyCheckout,TYPOGRAPHY,/src/components/CheckoutOrderSummary/CheckoutOrderSummary.js
@@ -35,7 +34,7 @@ buyCheckout,TYPOGRAPHY,/src/components/GiftVoucherList/GiftVoucherListChild.js
 buyCheckout,TYPOGRAPHY,/src/components/MyPaymentCards/MyPaymentCards.js
 buyCheckout,TYPOGRAPHY,/src/components/OrderConfirmation/OrderConfirmation.js
 buyCheckout,TYPOGRAPHY,/src/components/OrderConfirmation/OrderConfirmationTotals/OrderConfirmationTotals.js
-buyCheckout,TYPOGRAPHY,/src/components/OrderConfirmation/OrderSuccess/index.js
+buyCheckout,TYPOGRAPHY,/src/components/OrderConfirmation/OrderSuccess/OrderSuccess.js
 buyCheckout,TYPOGRAPHY,/src/components/OrderDetails/Options/Options.js
 buyCheckout,TYPOGRAPHY,/src/components/OrderDetails/OrderDetails.js
 buyCheckout,TYPOGRAPHY,/src/components/OrderDetails/OrderStatus/index.js
@@ -53,7 +52,6 @@ buyCheckout,TYPOGRAPHY,/src/components/ViewOrder/OrderedProductList/Category/Ord
 buyCheckout,TYPOGRAPHY,/src/components/ViewOrder/OrderedProductList/Category/ProductList/OrderCategoryProductList.js
 buyCheckout,TYPOGRAPHY,/src/components/ViewOrder/OrderedProductPod/InfoBar/InfoBar.js
 buyCheckout,TYPOGRAPHY,/src/components/ViewOrder/OrderedProductPod/OrderedProductPod.js
-buyCheckout,TYPOGRAPHY,/src/components/ViewOrder/Page/ViewOrderPage.js
 buyCheckout,ANCHOR_LINK,/src/components/AddToCalendar/util/create-calendar-event.js
 buyCheckout,ANCHOR_LINK,/src/components/CheckoutError/CheckoutError.js
 buyCheckout,ANCHOR_LINK,/src/components/CheckoutHeader/index.js
@@ -228,15 +226,6 @@ loyalty,TYPOGRAPHY,/src/components/DigitalVoucher/DigitalVoucher.js
 loyalty,TYPOGRAPHY,/src/components/DigitalWallet/DigitalWallet.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/Form/MarketingSubscription.js
 loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MembershipBenefits/MyPartnershipBenfits.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/InStoreRewards/InStoreRewards.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/InStoreVouchers/InStoreVouchers.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/OnlineRewards/OnlineRewards.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/OnlineVouchers/OnlineVouchers.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/shared/Reward/Reward.js
-loyalty,TYPOGRAPHY,/src/components/MyWaitrose/MyWaitroseRewards/shared/Voucher/Voucher.js
-loyalty,TYPOGRAPHY,/src/components/PromoCode/NonQualifiedPromoCodeWarning/NonQualifiedPromoCodeWarning.js
-loyalty,TYPOGRAPHY,/src/components/PromoCode/PromoCode.js
-loyalty,TYPOGRAPHY,/src/components/PromoItem/PromoItem.js
 identity,TYPOGRAPHY,/src/components/ForgotPassword/Success.js
 identity,ANCHOR_LINK,/src/components/ForgotPassword/Form.js
 identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/errors.js
@@ -246,6 +235,8 @@ recipes,TYPOGRAPHY,/src/components/Recipes/Content/CardNav/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Ingredients/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
+recipes,TYPOGRAPHY,/src/components/Recipes/Content/RecipeCardsGrid/Filters/index.js
+recipes,TYPOGRAPHY,/src/components/Recipes/Content/RecipeCardsGrid/RecipeCardsGrid.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyList/TrolleyList.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleySize/index.js
@@ -278,6 +269,8 @@ crossCutting,TYPOGRAPHY,/src/components/GoToCheckout/HasConflictsMessage/index.j
 crossCutting,TYPOGRAPHY,/src/components/GoToCheckout/MinimumSpendNotMet/MinimumSpendNotMetMessage.js
 crossCutting,TYPOGRAPHY,/src/components/HeaderLogo/index.js
 crossCutting,TYPOGRAPHY,/src/components/HeaderLogo/Logo.js
+crossCutting,TYPOGRAPHY,/src/components/Incentive/Incentive.js
+crossCutting,TYPOGRAPHY,/src/components/IncentivesList/index.js
 crossCutting,TYPOGRAPHY,/src/components/MiniTrolley/List/index.js
 crossCutting,TYPOGRAPHY,/src/components/MiniTrolley/MiniTrolley.js
 crossCutting,TYPOGRAPHY,/src/components/MiniTrolley/Pod/MiniTrolleyPod.js
@@ -296,8 +289,11 @@ crossCutting,TYPOGRAPHY,/src/components/ProductTags/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MessageIcon/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MyWaitroseIcon/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoText/PromoText.js
+crossCutting,TYPOGRAPHY,/src/components/Reward/Reward.js
+crossCutting,TYPOGRAPHY,/src/components/RewardsList/index.js
 crossCutting,TYPOGRAPHY,/src/components/ShopWindows/index.js
 crossCutting,TYPOGRAPHY,/src/components/SpecialistShopsLinks/index.js
+crossCutting,TYPOGRAPHY,/src/components/SpecialistShopsLinksOld/index.js
 crossCutting,TYPOGRAPHY,/src/components/StarRating/StarRating.js
 crossCutting,TYPOGRAPHY,/src/components/Text/Body/index.js
 crossCutting,TYPOGRAPHY,/src/components/Text/Title/index.js
@@ -317,6 +313,7 @@ crossCutting,ANCHOR_LINK,/src/components/CommonSiteBanner/UnsupportedBrowserBann
 crossCutting,ANCHOR_LINK,/src/components/ErrorBoundary/index.js
 crossCutting,ANCHOR_LINK,/src/components/SkipLink/index.js
 crossCutting,ANCHOR_LINK,/src/components/SpecialistShopsLinks/SpecialistShopLink/index.js
+crossCutting,ANCHOR_LINK,/src/components/SpecialistShopsLinksOld/SpecialistShopLink/index.js
 crossCutting,ANCHOR_LINK,/src/constants/errorsMessages.js
 crossCutting,BUTTON,/src/components/AmendOrderAlert/AmendOrderAlert.js
 crossCutting,BUTTON,/src/components/Button/index.js
