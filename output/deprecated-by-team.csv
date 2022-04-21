@@ -34,7 +34,6 @@ browse,components/wdx/Alert,/src/components/SiteHeader/SlotButton/Alert/index.js
 browse,components/wdx/Modal,/src/components/ListsModal/ListsModal.js
 browse,components/Button/styles.scss,/src/components/SiteHeader/ShoppingSummary/TrolleyInformation/TrolleyInformation.js
 browse,components/Button,/src/components/CategoryLinks/SeeMore/SeeMore.js
-browse,components/Button,/src/components/Footer/SiteLinks/SiteLinks.js
 browse,components/wdx/Text,/src/components/SearchResult/SearchResult.js
 browse,components/wdx/buttons/EditButton,/src/components/PageTitle/index.js
 browse,components/Accordion/Accordion,/src/components/ShoppingLists/Card/Accordion/index.js

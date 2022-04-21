@@ -70,7 +70,7 @@ browse,TYPOGRAPHY,/src/components/Footer/AppLinks/index.js
 browse,TYPOGRAPHY,/src/components/Footer/FooterBadges/index.js
 browse,TYPOGRAPHY,/src/components/Footer/FooterLinkList/index.js
 browse,TYPOGRAPHY,/src/components/Footer/SiteFooter/SiteFooter.js
-browse,TYPOGRAPHY,/src/components/Footer/SiteLinks/SiteLinks.js
+browse,TYPOGRAPHY,/src/components/Footer/SiteLinks/index.js
 browse,TYPOGRAPHY,/src/components/Footer/SocialLinks/index.js
 browse,TYPOGRAPHY,/src/components/Images/Thumbnail.js
 browse,TYPOGRAPHY,/src/components/Lists/CreateList/Button/index.js
@@ -156,7 +156,7 @@ browse,ANCHOR_LINK,/src/components/Footer/AppLinks/index.js
 browse,ANCHOR_LINK,/src/components/Footer/FooterBadges/index.js
 browse,ANCHOR_LINK,/src/components/Footer/FooterLinkList/index.js
 browse,ANCHOR_LINK,/src/components/Footer/SiteFooterMinimal/SiteFooterMinimal.js
-browse,ANCHOR_LINK,/src/components/Footer/SiteLinks/SiteLinks.js
+browse,ANCHOR_LINK,/src/components/Footer/SiteLinks/index.js
 browse,ANCHOR_LINK,/src/components/Footer/SocialLinks/index.js
 browse,ANCHOR_LINK,/src/components/HomePage/Header/Account/MyAccount/MyAccount.js
 browse,ANCHOR_LINK,/src/components/HomePage/Header/Services/index.js
@@ -207,8 +207,6 @@ customerServiceAndComms,TYPOGRAPHY,/src/components/ContactUsCard/ClickToReveal/C
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/FileUploaderScreen.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/InputImageUpload.js
 customerServiceAndComms,TYPOGRAPHY,/src/components/Forms/utilities/ImageUpload/Preview.js
-customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Email.js
-customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Phone.js
 loyalty,TYPOGRAPHY,/src/components/CookieAlert/FullModal/index.js
 loyalty,TYPOGRAPHY,/src/components/CookieAlert/InitialModal/index.js
 loyalty,TYPOGRAPHY,/src/components/DigitalVoucher/DigitalVoucher.js
@@ -226,6 +224,7 @@ recipes,TYPOGRAPHY,/src/components/Recipes/Content/Ingredients/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/RecipeCardsGrid/RecipeCardsGrid.js
 recipes,ANCHOR_LINK,/src/components/Recipes/Content/breadcrumbs.js
+buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyList/TrolleyList.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleySize/index.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleySummary/TrolleySummary.js
@@ -297,6 +296,7 @@ crossCutting,TYPOGRAPHY,/src/server/controllers/frontend/error.js
 crossCutting,TYPOGRAPHY,/src/stubs/services/scripts/cardinal.js
 crossCutting,ANCHOR_LINK,/src/components/AnchorLink/index.js
 crossCutting,ANCHOR_LINK,/src/components/BackLink/BackLink.js
+crossCutting,ANCHOR_LINK,/src/components/Browse/GroceriesLegalNotice/index.js
 crossCutting,ANCHOR_LINK,/src/components/CommonSiteBanner/UnsupportedBrowserBanner.js
 crossCutting,ANCHOR_LINK,/src/components/ErrorBoundary/index.js
 crossCutting,ANCHOR_LINK,/src/components/SkipLink/index.js

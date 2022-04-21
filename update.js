@@ -53,7 +53,7 @@ let priorityDeprecatedHTMLElementsByTeamAndComponent = {};
 initDatabase();
 
 // Ingredients components and stories
-glob(`../wtr-ingredients/src/ingredients/**/*.stories.js`, (err, files) => {
+glob(`../wtr-ingredients/src/ingredients/**/*.stories.@(js|tsx)`, (err, files) => {
   const numStoriesExports = countStoriesExports(files);
   numIngredientsComponents = files.length;
   updateStat('numIngredientsComponents', numIngredientsComponents);

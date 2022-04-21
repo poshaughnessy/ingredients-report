@@ -15,6 +15,7 @@ identity,ANCHOR_LINK,/src/components/Registration/AccountDetails/errors.js
 identity,ANCHOR_LINK,/src/components/Registration/Success/Success.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotGridServiceSelection/SlotGridServiceSelectionTabs/index.js
 slots,ANCHOR_LINK,/src/components/BookSlot/SlotsServiceMessage/BranchSpecificMessaging/index.js
+slots,ANCHOR_LINK,/src/components/BookSlotSnackbar/index.js
 browse,ANCHOR_LINK,/src/components/Breadcrumbs/index.js
 browse,ANCHOR_LINK,/src/components/CategoryLinks/CategoryLink/CategoryLink.js
 browse,ANCHOR_LINK,/src/components/HomeLink/index.js
@@ -39,7 +40,6 @@ browse,ANCHOR_LINK,/src/components/SiteHeader/SiteHeaderMinimal.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SlideOutNav/MenuCard/MenuCard.js
 browse,ANCHOR_LINK,/src/components/SiteHeader/SlideOutNav/MenuLink/MenuLink.js
 browse,BUTTON,/src/components/CategoryLinks/SeeMore/SeeMore.js
-browse,BUTTON,/src/components/Footer/SiteLinks/SiteLinks.js
 browse,BUTTON,/src/components/PageTitle/index.js
 browse,BUTTON,/src/components/SiteHeader/ShoppingSummary/TrolleyInformation/TrolleyInformation.js
 browse,ICONS,/src/components/Product/Attributes/index.js
@@ -88,6 +88,9 @@ content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/Receipt/index.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/SimpleQuestion/index.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/SubmissionSuccess/index.js
 content,TYPOGRAPHY,/src/components/CompetitionsForms/Sections/TermsAndConditions/index.js
+customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Email.js
+customerServiceAndComms,ANCHOR_LINK,/src/components/ContactUsCard/ContactTable/Rows/Phone.js
+customerServiceAndComms,ANCHOR_LINK,/src/components/CustomerServiceForms/OnlineOrderIssueForm/OnlineOrderIssueForm.js
 loyalty,ANCHOR_LINK,/src/components/CookieAlert/FullModal/index.js
 loyalty,ANCHOR_LINK,/src/components/CookieAlert/InitialModal/index.js
 loyalty,ANCHOR_LINK,/src/components/DigitalVoucher/DigitalVoucher.js
@@ -101,7 +104,6 @@ loyalty,ANCHOR_LINK,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWa
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCard/OrderReplacementCard.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardLink/OrderReplacementCardLink.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardSuccess/OrderReplacementCardSuccess.js
-customerServiceAndComms,ANCHOR_LINK,/src/components/CustomerServiceForms/OnlineOrderIssueForm/OnlineOrderIssueForm.js
 recipes,ANCHOR_LINK,/src/components/Recipes/Content/CardNav/index.js
 recipes,ANCHOR_LINK,/src/components/Recipes/Content/RecipeCardsGrid/RecipeCardsGrid.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
