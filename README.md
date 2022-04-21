@@ -21,3 +21,5 @@ node server
 ```
 
 5. As a temporary solution, the dashboard is currently [hosted on Render](https://wtr-ingredients-report.onrender.com/). If you would like to deploy updates there in the short term, please ask Peter O'Shaughnessy or Ashley Heath for help.
+
+6. Upload the CSV files generated in the `output` directory into Google Drive (and, if necessary, update the anchor links to them in the `index.html`)

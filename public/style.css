@@ -204,7 +204,7 @@ footer {
   margin-top: 1.5em;
 }
 
-footer h4 {
+footer p {
   text-align: center;
   color: #333;
   font-weight: normal;
@@ -215,7 +215,7 @@ footer a {
   color: #111;
 }
 
-footer p {
+footer .small {
   text-align: center;
   color: #666;
   font-size: 0.9em;
