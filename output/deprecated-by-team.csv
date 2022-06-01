@@ -22,7 +22,6 @@ content,components/wdx/Text,/src/components/CompetitionsForms/Sections/Submissio
 content,components/wdx/Text,/src/components/CompetitionsForms/Sections/TermsAndConditions/index.js
 browse,components/wdx/Card,/src/components/ShoppingLists/Card/ShoppingListCard.js
 browse,components/wdx/Iconography,/src/components/Product/Attributes/index.js
-browse,components/wdx/Iconography,/src/components/SiteHeader/SiteHeaderLinks/MyAccountMenu/MyAccountMenu.js
 browse,components/Modal,/src/components/AddAllItemsErrorModal/AddAllItemsErrorModal.js
 browse,components/Modal,/src/components/HomePage/index.js
 browse,components/Modal,/src/components/MultiSearch/Modal/MultiSearchModal.js
@@ -54,6 +53,8 @@ buyCheckout,components/wdx/buttons/ViewOrder,/src/components/PendingOrderSummary
 slots,components/Modal,/src/components/BookSlot/CollectionBranchAddressPanel/CollectionTypesButtonAndModal/index.js
 slots,components/Modal,/src/components/BookSlot/SlotGrid/SlotGrid.js
 slots,components/Modal,/src/components/BookSlot/SlotsChristmasModal/SlotsChristmasModal.js
+slots,components/Modal,/src/components/BookSlot/VariantThreeDaysWithoutSplit/components/SlotGrid/SlotGrid.js
+slots,components/Modal,/src/components/BookSlot/VariantThreeDaysWithSplit/components/SlotGrid/SlotGrid.js
 buyTrolley,components/Modal,/src/components/Trolley/Trolley.js
 account,components/wdx/Spinner,/src/components/Address/AddAddressModal/index.js
 account,components/wdx/Alert,/src/components/Address/AddressBook/AddressBook.js

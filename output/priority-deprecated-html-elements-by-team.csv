@@ -199,6 +199,8 @@ slots,TYPOGRAPHY,/src/components/BookSlot/Slot/Slot.js
 slots,TYPOGRAPHY,/src/components/BookSlot/SlotGrid/Table.js
 slots,TYPOGRAPHY,/src/components/BookSlot/SlotGridOverlayMessaging/index.js
 slots,TYPOGRAPHY,/src/components/BookSlot/SlotsChristmasModal/SlotsChristmasModal.js
+slots,TYPOGRAPHY,/src/components/BookSlot/VariantThreeDaysWithoutSplit/components/SlotGrid/Table.js
+slots,TYPOGRAPHY,/src/components/BookSlot/VariantThreeDaysWithSplit/components/SlotGrid/Table.js
 slots,ANCHOR_LINK,/src/components/BookSlot/ProhibitedPage/ProhibitedPage.js
 slots,BUTTON,/src/components/BookSlot/ExpandCollapsePanel/ExpandCollapsePanel.js
 slots,BUTTON,/src/components/BookSlot/Slot/Slot.js
@@ -223,7 +225,6 @@ recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Ingredients/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/Method/index.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/RecipeCardsGrid/RecipeCardsGrid.js
-recipes,ANCHOR_LINK,/src/components/Recipes/Content/breadcrumbs.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyList/TrolleyList.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleyPod/TrolleyPod.js
 buyTrolley,TYPOGRAPHY,/src/components/Trolley/TrolleySize/index.js
@@ -272,6 +273,7 @@ crossCutting,TYPOGRAPHY,/src/components/Offers/OfferDetails/OfferDetails.js
 crossCutting,TYPOGRAPHY,/src/components/OffersToggle/index.js
 crossCutting,TYPOGRAPHY,/src/components/PendingOrders/PendingOrders.js
 crossCutting,TYPOGRAPHY,/src/components/PreviousOrders/PreviousOrders.js
+crossCutting,TYPOGRAPHY,/src/components/ProductCarousel/ProductCarousel.js
 crossCutting,TYPOGRAPHY,/src/components/ProductTags/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MessageIcon/index.js
 crossCutting,TYPOGRAPHY,/src/components/PromoIconography/MyWaitroseIcon/index.js
@@ -309,6 +311,7 @@ crossCutting,BUTTON,/src/components/Carousel/Arrow/index.js
 crossCutting,BUTTON,/src/components/Conflict/Resolution/ChangeSlotType/ChangeSlotType.js
 crossCutting,BUTTON,/src/components/Forms/utilities/SubText/index.js
 crossCutting,BUTTON,/src/components/Forms/utilities/Textbox/PasswordToggle.js
+crossCutting,BUTTON,/src/components/ProductCarousel/ProductCarousel.js
 crossCutting,BUTTON,/src/components/UrgencyBanner/index.js
 crossCutting,BUTTON,/src/formbuilder/index.js
 crossCutting,BUTTON,/src/stubs/services/scripts/cardinal.js

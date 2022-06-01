@@ -43,7 +43,6 @@ browse,BUTTON,/src/components/CategoryLinks/SeeMore/SeeMore.js
 browse,BUTTON,/src/components/PageTitle/index.js
 browse,BUTTON,/src/components/SiteHeader/ShoppingSummary/TrolleyInformation/TrolleyInformation.js
 browse,ICONS,/src/components/Product/Attributes/index.js
-browse,ICONS,/src/components/SiteHeader/SiteHeaderLinks/MyAccountMenu/MyAccountMenu.js
 browse,TYPOGRAPHY,/src/components/SearchResult/SearchResult.js
 buyCheckout,ANCHOR_LINK,/src/components/CheckoutHeader/index.js
 buyCheckout,ANCHOR_LINK,/src/components/CheckoutTotals/index.js
@@ -98,12 +97,14 @@ loyalty,ANCHOR_LINK,/src/components/MyWaitrose/BecomeAMember/BecomeAMember.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/Form/Form.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/LinkMyWaitroseCardSuccess/LinkMyWaitroseCardSuccess.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseCardAndDetails/MyWaitroseMemberView/MyWaitroseAddress/MyWaitroseAddress.js
+loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseCardAndDetails/MyWaitroseMemberView/MyWaitroseMemberView.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseHubHomepage/MyWaitroseHubHomepage.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/MyWaitroseVouchersAndOffers/IPickIncentives/IPickIncentives.js
 loyalty,ANCHOR_LINK,/src/components/MyWaitrose/WelcomeToMyWaitrose/WelcomeToMyWaitrose.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCard/OrderReplacementCard.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardLink/OrderReplacementCardLink.js
 loyalty,ANCHOR_LINK,/src/components/OrderReplacementCardSuccess/OrderReplacementCardSuccess.js
+recipes,ANCHOR_LINK,/src/components/Recipes/Content/breadcrumbs.js
 recipes,ANCHOR_LINK,/src/components/Recipes/Content/CardNav/index.js
 recipes,ANCHOR_LINK,/src/components/Recipes/Content/RecipeCardsGrid/RecipeCardsGrid.js
 recipes,TYPOGRAPHY,/src/components/Recipes/Content/CourseDetails/index.js
@@ -115,7 +116,7 @@ crossCutting,ANCHOR_LINK,/src/components/AnchorLink/index.js
 crossCutting,ANCHOR_LINK,/src/components/CarouselSlide/CarouselSlide.js
 crossCutting,ANCHOR_LINK,/src/components/CategoryBack/index.js
 crossCutting,ANCHOR_LINK,/src/components/Conflict/ConflictMessage/index.js
-crossCutting,ANCHOR_LINK,/src/components/Conflict/Resolution/ViewAlternatives/ViewAlternatives.js
+crossCutting,ANCHOR_LINK,/src/components/Conflict/Resolution/ViewAlternatives/index.js
 crossCutting,ANCHOR_LINK,/src/components/CustomerServiceLinks/index.js
 crossCutting,ANCHOR_LINK,/src/components/Error/ProductNotFound/index.js
 crossCutting,ANCHOR_LINK,/src/components/ExtendedNavigationCard/AnchorLinkWrapper.js
